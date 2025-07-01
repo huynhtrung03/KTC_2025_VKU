@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arler</title>
+</head>
+<body>
+    <button class="colorBtn" style="background-color: rgb(255, 0, 0);">red</button>
+    <button class="colorBtn" style="background-color: rgb(10, 100, 255);" >blue</button>
+    <button class="colorBtn" style="background-color: rgb(0, 255, 8);">green</button>
+    <button class="colorBtn" style="background-color: rgb(113, 58, 58);">brown</button>
+    <script>
+        const buttons = document.querySelectorAll('.colorBtn')
+        
+        buttons.forEach(function(btn){
+            btn.addEventListener('click', function() {
+                alert('Bạn vừa bấm ' +  btn.textContent);
+            })
+        })
+    </script>
+</body>
+</html>

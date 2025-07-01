@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oneclick</title>
+</head>
+<body>
+    <button id="onceBtn" style="width: 100px;">SOS</button>
+
+
+    <script>
+        const onceBtn = document.getElementById('onceBtn');
+
+        onceBtn.addEventListener('click', function () {
+            onceBtn.disabled = true; 
+            onceBtn.textContent = 'OneClick!'; 
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover</title>
+    <style>
+        .hoverBox {
+            width: 40px;
+            height: 40px;
+            background-color: lightblue;
+            padding: 20px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="hoverBox"></div>
+
+    <script>
+        const box = document.querySelector('.hoverBox');
+
+        box.addEventListener('mouseenter', function () {
+        box.style.backgroundColor = 'lightblue';
+        });
+
+        box.addEventListener('mouseleave', function () {
+  box.style.backgroundColor = 'lightgray';
+});
+
+    </script>
+</body>
+</html>

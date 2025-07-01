@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .deleteBtn{
+            margin: 1cap;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <ul id="itemList">
+        <li>trung <button class="deleteBtn">Xoá</button></li>
+        <li>nhân <button class="deleteBtn">XOá</button></li>
+        <li>khôi <button class="deleteBtn">Xoá</button></li>
+        <li>nam <button class="deleteBtn">Xoá</button></li>
+    </ul>   
+    <script>
+        const deleteButton = document.querySelectorAll('.deleteBtn');
+        deleteButton.forEach(function(button) {
+            button.addEventListener('click', function() {
+                const li = button.parentElement;
+                li.remove();
+            });
+        });
+    </script>
+</body>
+</html>

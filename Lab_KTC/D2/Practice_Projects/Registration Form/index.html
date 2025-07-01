@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form id="registrationForm" novalidate>
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" id="fullName" />
+      <div class="error" id="nameError"></div>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" id="email" />
+      <div class="error" id="emailError"></div>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" id="password" />
+      <div class="error" id="passwordError"></div>
+    </div>
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input type="password" id="confirmPassword" />
+      <div class="error" id="confirmError"></div>
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" id="phone" />
+      <div class="error" id="phoneError"></div>
+    </div>
+    <div class="form-group">
+      <label>Gender</label>
+      <input type="radio" name="gender" value="Male" /> Male
+      <input type="radio" name="gender" value="Female" /> Female
+      <input type="radio" name="gender" value="Other" /> Other
+      <div class="error" id="genderError"></div>
+    </div>
+    <div class="form-group">
+      <label>Date of Birth</label>
+      <input type="date" id="dob" />
+      <div class="error" id="dobError"></div>
+    </div>
+    <div class="form-group">
+      <label>Country</label>
+      <select id="country">
+        <option value="">--Chọn quốc gia--</option>
+        <option>Vietnam</option>
+        <option>USA</option>
+        <option>Japan</option>
+      </select>
+      <div class="error" id="countryError"></div>
+    </div>
+    <div class="form-group">
+      <label>Hobbies</label>
+      <input type="checkbox" name="hobby" value="Reading" /> Reading
+      <input type="checkbox" name="hobby" value="Music" /> Music
+      <input type="checkbox" name="hobby" value="Traveling" /> Traveling
+      <div class="error" id="hobbyError"></div>
+    </div>
+    <div class="form-group">
+      <label>Profile Picture</label>
+      <input type="file" id="profilePic" accept=".jpg,.jpeg,.png" />
+    </div>
+    <div class="form-group">
+      <label>Bio / About You</label>
+      <textarea id="bio" maxlength="300"></textarea>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

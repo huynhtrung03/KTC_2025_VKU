@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #addItemBtn {
+            width: 60px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="itemInput" placeholder="">
+    <button id="addItemBtn">Thêm</button>
+    <ul id="itemList"></ul>
+
+
+    <script>
+        const input = document.getElementById('itemInput');
+        const button = document.getElementById('addItemBtn');
+        const list = document.getElementById('itemList');
+
+        button.addEventListener('click', function() {
+            const value = input.value.trim();
+            if (value !== ''){
+                const li = document.createElement('li');
+                li.textContent = value;
+                list.appendChild(li);
+                input.value = ''; 
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="greetingText"></p>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+        const greetingText = document.getElementById('greetingText');
+        const hour = new Date().getHours();
+        let message = '';
+
+        if (hour < 12) {
+            message = 'Good Morning ☀️';
+        } else if (hour < 18) {
+            message = 'Good Afternoon 🌤️';
+        } else {
+            message = 'Good Evening 🌙';
+        }
+
+            greetingText.textContent = message;
+        });
+    </script>
+</body>
+</html>

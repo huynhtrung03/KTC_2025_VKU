@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change image</title>
+    <style>
+        #changeImageBtn {
+            width: 100px;
+            height: 30px;
+
+        }
+        #mainImage {
+            width: 120px;
+            height: 160px;
+        }
+        
+    </style>
+</head>
+<body>
+    <button id="changeImageBtn">Thay đổi ảnh</button>
+    <br>
+    <img id="mainImage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/1200px-Cat_November_2010-1a.jpg" alt="cat">
+    <!-- <img id="mainImage" src="https://img.pikbest.com/png-images/20240715/bengal-tiger-cub-is-lying-on-a-fallen-tree-trunk-in-the-forest-looking-at-camera_10670299.png!sw800" alt="tiger"> -->
+
+
+    <script>
+        const images = document.getElementById('mainImage');
+        const button = document.getElementById('changeImageBtn');
+
+        button.addEventListener('click', function() {
+            images.src = 'https://img.pikbest.com/png-images/20240715/bengal-tiger-cub-is-lying-on-a-fallen-tree-trunk-in-the-forest-looking-at-camera_10670299.png!sw800';
+        })
+
+    </script>
+</body>
+</html>

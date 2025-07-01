@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="emailInput" placeholder="Nhập email của bạn">
+    <button id="validateBtn">Kiểm tra</button>
+    <p id="errorMessage" style="color: red;"></p>
+
+    <script>
+        const emailInput = document.getElementById('emailInput');
+        const validateBtn = document.getElementById('validateBtn');
+        const errorMessage = document.getElementById('errorMessage');
+
+        validateBtn.addEventListener('click', function () {
+        const email = emailInput.value.trim();
+        const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+
+            if (email === '') {
+                errorMessage.textContent = 'Vui lòng nhập email';
+            } else if (!emailRegex.test(email)) {
+                errorMessage.textContent = 'Email không hợp lệ';
+            } else {
+                errorMessage.textContent = '';
+                alert('Email hợp lệ: ' + email);
+            }
+        });
+
+
+    </script>
+</body>
+</html>

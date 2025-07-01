@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #toggleHighlightBtn {
+            width: 50px;
+            height: 20px;
+        }
+      .box {
+        width: 200px;
+        height: 100px;
+        border: 2px solid #333;
+        background-color: aliceblue;
+        
+      }
+
+      .highlight {
+        background-color: yellow;
+        color: black;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="toggleHighlightBtn">click</button>
+    <div class="box">đây là cái hộp!!</div>
+    <script>
+      
+        const btn = document.getElementById('toggleHighlightBtn');
+        const box = document.querySelector('.box');
+
+        btn.addEventListener('click', function() {
+            box.classList.toggle('highlight');
+        });
+    </script>
+  </body>
+</html>

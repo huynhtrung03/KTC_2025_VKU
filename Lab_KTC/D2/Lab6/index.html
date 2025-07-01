@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>submit error</title>
+    <!-- <link href="/src/style.css" rel="stylesheet"> -->
+    <style>
+        
+    </style>
+</head>
+<body>
+    <input id="usernameInput" type="text" placeholder="nhập tên..." w-50>
+    <button id="submitUsername">Submit</button>
+
+    <script>
+        const input = document.getElementById('usernameInput');
+        const button = document.getElementById('submitUsername');
+
+        button.addEventListener('click', function() {
+        const username = input.value.trim(); 
+            if (username !== '') {
+                alert('Tên người dùng: ' + username);
+            } else {
+                alert('Vui lòng nhập tên!');
+            }
+        });
+
+    </script>
+</body>
+</html>
