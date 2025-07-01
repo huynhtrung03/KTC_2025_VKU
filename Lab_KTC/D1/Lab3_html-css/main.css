@@ -1,0 +1,81 @@
+/* style.css */
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid #e1e4e8;
+  
+ 
+}
+
+
+.stat-head {
+  text-align: center;
+  padding: 28px 8px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.stat-head small {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  color: #555;
+}
+
+.stat-head h2 {
+  margin: 4px 0 0;
+  color: #35a3c5;
+  font-weight: 500;
+  font-size: 1.9rem;
+}
+
+/* phần chart nhỏ */
+.stat-body {
+  padding: 22px 8px 18px;
+  text-align: center;
+}
+
+.mini-bars {
+  --w: 10px;           /* width của mỗi cột */
+  --gap: 12px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: var(--gap);
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.mini-bars li {
+  width: var(--w);
+  height: 80px;
+  background: #fcfcfc;
+  border: 1px solid #e6e6e6;
+  position: relative;
+}
+
+/* phần tô màu ở đáy cột – cao theo biến --h */
+.mini-bars li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--h);
+  background: currentColor;
+}
+
+/* màu cho từng cột (khớp ảnh gốc) */
+.bar-1 { color: #e74c3c; }   /* đỏ */
+.bar-2 { color: #2ecc71; }   /* xanh lá */
+.bar-3 { color: #3498db; }   /* xanh dương */
+.bar-4 { color: #f4d03f; }   /* vàng */
+.bar-5 { color: #d35400; }   /* cam */
+
+.labels {
+  font-size: .7rem;
+  letter-spacing: 1px;
+  color: #777;
+}

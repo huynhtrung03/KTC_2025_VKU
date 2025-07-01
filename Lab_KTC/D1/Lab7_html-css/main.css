@@ -1,0 +1,80 @@
+/* Process Flow Styles */
+.process-flow {
+    margin-top: 50px; /* Khoảng cách trên */
+    margin-bottom: 50px; /* Khoảng cách dưới */
+}
+
+.process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+/* .layout-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    size: 50px;
+    
+} */
+.layout{
+    flex-direction: column;
+}
+.process-icon-circle {
+    width: 120px; /* Kích thước vòng tròn */
+    height: 120px; /* Kích thước vòng tròn */
+    border-radius: 50%; /* Làm cho div thành hình tròn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    color: white; /* Màu icon trắng */
+    flex-direction: column;
+}
+
+.process-icon {
+    font-size: 3.5rem; /* Kích thước icon */
+}
+
+.process-label {
+    font-size: 1.2rem; /* Kích thước chữ nhãn */
+    font-weight: bold;
+    color: #555;
+}
+
+.process-arrow {
+    font-size: 2rem; /* Kích thước mũi tên */
+    color: #ccc; /* Màu mũi tên */
+    margin: 0 15px; /* Khoảng cách giữa mũi tên và các bước */
+}
+
+/* Custom Colors for Process Steps */
+.bg-red {
+    background-color: #f77f7f; /* Màu đỏ */
+}
+
+.bg-blue-process {
+    background-color: #87ceeb; /* Màu xanh da trời */
+}
+
+.bg-green-process {
+    background-color: #90ee90; /* Màu xanh lá cây */
+}
+
+.bg-purple-process {
+    background-color: #b19cd9; /* Màu tím */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 767.98px) {
+    .process-flow .col-lg-3,
+    .process-flow .col-md-6 {
+        margin-bottom: 30px; /* Khoảng cách giữa các bước khi xếp chồng */
+    }
+
+    .process-arrow {
+        display: none !important; /* Ẩn mũi tên trên màn hình nhỏ */
+    }
+}

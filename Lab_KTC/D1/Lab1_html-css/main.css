@@ -1,0 +1,182 @@
+/* html {
+    background-color: rgb(117, 117, 117);
+} */
+
+.chart {
+    width: 1200px;
+    height: 740px;
+    background-color: #fff;
+    margin: 36px;
+color: #fff;
+    
+}
+/* hàng ngang1 */
+.chart_row_do {
+    display: flex;
+    margin: 20px;
+    background-color: #bdbdbd;
+    text-align: center;
+    align-items: center; 
+    font-size: 20px;
+    line-height: 50px;
+}
+
+/* .space {
+    background-color: #b8b8b8;
+    padding: auto;
+    width: 740px;
+ } */
+.one {
+    background-color: #fb5353;
+    width: 90px;
+    padding: 6px 6px;
+}
+
+.row_do {
+    width: 130px;
+    background-color: #f03f3f;
+    padding: 6px 6px;
+}
+
+/* hàng ngang 2 */
+.chart_row_xanhduong {
+    display: flex;
+    margin: 20px;
+    background-color: #bdbdbd;
+    text-align: center;
+    align-items: center; 
+    font-size: 20px;
+    line-height: 50px;
+}
+.two {
+    background-color: #0fadd4;
+    width: 280px;
+    padding: 6px 6px;
+}
+
+.row_xanhduong {
+    width: 130px;
+    background-color: #4095f1;
+    padding: 6px 6px;
+}
+
+/* hàng ngang 3*/
+
+.chart_row_xanhla {
+    display: flex;
+    margin: 20px;
+    background-color: #bdbdbd;
+    text-align: center;
+    align-items: center; 
+    font-size: 20px;
+    line-height: 50px;
+}
+.row_xanhla {
+    width: 130px;
+    background-color: #03ef4a;
+    padding: 6px 6px;
+}
+.three {
+    background-color: #6effd4;
+    width: 380px;
+    padding: 6px 6px;
+}
+
+/* hàng ngang 4*/
+.chart_row_vang {
+    display: flex;
+    margin: 20px;
+    background-color: #bdbdbd;
+    text-align: center;
+    align-items: center; 
+    font-size: 20px;
+    line-height: 50px;
+}
+.four {
+    background-color: #fbfb68;
+    width: 160px;
+    padding: 6px 6px;
+}
+.row_vang {
+    width: 130px;
+    background-color: #baed2e;
+    padding: 6px 6px;
+}
+/* hàng ngang 5*/
+.chart_row_tim {
+    display: flex;
+    margin: 20px;
+    background-color: #bdbdbd;
+    text-align: center;
+    align-items: center; 
+    font-size: 20px;
+    line-height: 50px;
+}
+.five {
+    background-color: #f050d2;
+    width: 260px;
+    padding: 6px 6px;
+}
+.row_tim {
+    width: 130px;
+    background-color: #b130f2;
+    padding: 6px 6px;
+}
+/* hàng ngang 6*/
+.chart_row_hong {
+    display: flex;
+    margin: 20px;
+    background-color: #bdbdbd;
+    text-align: center;
+    align-items: center; 
+    font-size: 20px;
+    line-height: 50px;
+}
+.six {
+    background-color: #faaeec;
+    width: 460px;
+    padding: 6px 6px;
+}
+.row_hong {
+    width: 130px;
+    background-color: #eb029d;
+    padding: 6px 6px;
+}
+/* hàng ngang 7*/
+.chart_row_xanhdam {
+    display: flex;
+    margin: 20px;
+    background-color: #bdbdbd;
+    text-align: center;
+    align-items: center; 
+    font-size: 20px;
+    line-height: 50px;
+}
+.seven {
+    background-color: #1f60e3;
+    width: 195px;
+    padding: 6px 6px;
+}
+.row_xanhdam {
+    width: 130px;
+    background-color: #1607e6;
+    padding: 6px 6px;
+}
+
+
+
+
+
+.row {
+  animation: growth-horizontal 2s ease-out forwards;
+}
+@keyframes growth-horizontal {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: var(--percent);
+  }
+}

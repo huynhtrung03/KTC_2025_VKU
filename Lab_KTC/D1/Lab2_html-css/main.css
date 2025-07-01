@@ -1,0 +1,96 @@
+:root {
+    --my-color1: red;
+    --my-color2: rgb(109, 143, 9);
+    --my-color3: rgb(23, 194, 163);
+    --my-color4: rgb(255, 20, 185);
+    --my-color5: rgb(31, 6, 215);
+}
+
+
+/* .body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    } */
+
+.profile-container {
+    background-image: url(https://cdn-media.sforum.vn/storage/app/media/wp-content/uploads/2024/02/anh-phong-canh-66-1.jpg);
+    width: 600px;
+    height: 300px;
+    border-radius: 0px;
+    margin: auto;
+    /* overflow: hidden; */
+    /* align-items: flex-end; */
+    display: flex;
+    align-items: flex-end;
+
+}
+
+.profile-info{
+    display: flex;
+    
+
+}
+
+.avt {
+    width: 100px;
+    height: 100px;
+    margin: 50px 0 50px 50px;
+    /* justify-content: flex-end; */
+    border-radius: 50px;
+
+}
+.info {
+    color: #000000;
+    margin: 50px 0 50px 20px;
+}
+
+
+.stats {
+    background-color: #ffffff;
+    margin: 0 82px;
+    padding: -1px;
+    border-bottom: 2px solid #dfdfdf;
+    border-left: 2px solid #dfdfdf;
+    border-right: 2px solid #dfdfdf;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #6e6e6e;
+    padding: 10px;
+    border-bottom: 2px solid #d8d8d8;
+
+}
+
+.stat-value {
+    padding: 10px;
+    color: #f0f4f8;
+    border-radius: 10px;
+}
+
+.one {
+    background-color: var(--my-color1);
+}
+.two {
+    background-color: var(--my-color2);
+}
+
+.three {
+    background-color: var(--my-color3);
+}
+
+.four {
+    background-color: var(--my-color4);
+}   
+ 
+.five {
+    background-color: var(--my-color5);
+}

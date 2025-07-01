@@ -1,0 +1,107 @@
+/* Skill Bars Section Styles */
+.skill-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Bóng đổ mềm hơn */
+    max-width: 800px; /* Giới hạn chiều rộng của thẻ tổng thể */
+    margin: 50px auto; /* Căn giữa thẻ và thêm khoảng cách */
+}
+
+.skill-item {
+    display: flex;
+    align-items: center; /* Căn chỉnh các mục theo chiều dọc */
+    margin-bottom: 20px; /* Khoảng cách giữa các skill item */
+}
+
+.skill-item:last-child {
+    margin-bottom: 0; /* Không có khoảng cách dưới mục cuối cùng */
+}
+
+.skill-icon-wrapper {
+    width: 40px; /* Kích thước icon nền */
+    height: 40px; /* Kích thước icon nền */
+    border-radius: 6px; /* Bo tròn góc nhẹ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px; /* Khoảng cách giữa icon và label */
+    flex-shrink: 0; /* Ngăn không cho icon wrapper co lại */
+}
+
+.skill-icon {
+    font-size: 1.2rem; /* Kích thước icon */
+}
+
+.skill-label {
+    font-size: 1.1rem;
+    font-weight: 600; /* Hơi đậm */
+    color: #333;
+    width: 80px; /* Đặt chiều rộng cố định cho nhãn để căn chỉnh */
+    flex-shrink: 0;
+}
+
+.skill-bar-container {
+    flex-grow: 1; /* Cho phép container thanh tiến trình lấp đầy không gian còn lại */
+    height: 10px; /* Chiều cao của thanh tiến trình */
+    background-color: #e9ecef; /* Màu nền của thanh rỗng */
+    border-radius: 5px;
+    overflow: hidden; /* Đảm bảo thanh đầy không tràn ra ngoài */
+    margin-left: 20px; /* Khoảng cách giữa label và thanh tiến trình */
+}
+
+.skill-bar {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.8s ease-in-out; /* Hiệu ứng chuyển động khi load */
+}
+
+/* Custom Colors for Skill Bars (Dựa trên hình ảnh) */
+.bg-green-skill {
+    background-color: #8bc34a; /* Màu xanh lá cây */
+}
+
+.bg-red-skill {
+    background-color: #f44336; /* Màu đỏ */
+}
+
+.bg-blue-skill {
+    background-color: #03a9f4; /* Màu xanh da trời */
+}
+
+.bg-yellow-skill {
+    background-color: #ffeb3b; /* Màu vàng */
+}
+
+.bg-purple-skill {
+    background-color: #9c27b0; /* Màu tím */
+}
+
+/* Tùy chỉnh màu chữ nếu cần cho một số màu nền cụ thể */
+.bg-yellow-skill .skill-icon,
+.bg-yellow-skill .skill-label {
+    color: #333; /* Đổi màu chữ sang đen cho nền vàng */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 576px) {
+    .skill-card {
+        padding: 20px;
+        margin: 30px auto;
+    }
+    .skill-icon-wrapper {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+    }
+    .skill-icon {
+        font-size: 1rem;
+    }
+    .skill-label {
+        font-size: 1rem;
+        width: 60px; /* Điều chỉnh chiều rộng nhãn trên màn hình nhỏ */
+    }
+    .skill-bar-container {
+        margin-left: 10px;
+    }
+}
