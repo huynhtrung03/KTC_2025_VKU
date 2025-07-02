@@ -1,0 +1,40 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: rgb(203, 203, 203);
+    border-radius: 20px ;
+    padding: 20px;
+    width: 360px;
+    height: 80px;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px ;
+    
+}
+.img{
+    width: 24px;
+}
+.colLeft,.colRight{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.ratio{
+    background-color: rgb(221, 213, 201);
+    border-radius: 20px;
+    padding: 10px;
+}
+.number{
+    color: rgb(205, 55, 55);
+}
+.rowOne{
+     display: flex;  
+     justify-content: space-between;
+}
+.rowTwo{
+    display: flex;  
+    justify-content: space-between;
+}

@@ -1,0 +1,24 @@
+.cardContainer{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(203, 203, 203);
+    align-items: center;
+    border-radius:20px ;
+    width: 360px;
+    height: 60px;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.img{
+    width: 48px;
+}
+.leftCol{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.rightCol{
+
+}

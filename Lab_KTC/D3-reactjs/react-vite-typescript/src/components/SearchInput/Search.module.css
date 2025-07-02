@@ -1,0 +1,51 @@
+.searchContainer {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 230px; 
+    max-width: 90%; 
+    margin: 10px 0;
+
+}
+.input{
+    flex-grow: 1;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 5px 0;
+    color: #333;
+    opacity: 0.5;
+}
+.leftIcon{
+    color: #757676; 
+    font-size: 24px;
+}
+.rightIcon{
+    color: #757676;
+    padding: 5px;
+
+}
+.fbold{
+    font-weight: bold;
+    opacity: 1;
+}
+.bradius{
+    border-radius: 100%;
+}
+.brec{
+    border-radius: 15%;
+}
+
+.yellow{
+background-color: yellow;
+
+}
+
+.green{
+background-color: rgb(130, 239, 217);
+
+}

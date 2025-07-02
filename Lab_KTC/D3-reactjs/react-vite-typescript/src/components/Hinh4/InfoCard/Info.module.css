@@ -1,0 +1,39 @@
+.cardContainer{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(203, 203, 203);
+    border-radius: 20px;
+    height: 80px;
+    width: 360px;
+    margin: 10px 0;
+}
+.img{
+    width: 72px;
+}
+.cRightCol{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    font-weight: bold;
+}
+.name{
+    font-size: 20px;
+}
+.visa{
+    color: blue;
+    font-style: italic;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+.leftCol{
+    display: flex;
+    gap: 5px;
+}
+.rightCol{
+    display: flex;
+}
