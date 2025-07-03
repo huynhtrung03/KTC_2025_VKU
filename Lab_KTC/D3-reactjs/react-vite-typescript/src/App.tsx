@@ -20,7 +20,7 @@ import {Person} from "./components/Hinh5/Person";
 
 function App() {
   return (
-    <div>
+    <div className=''>
       <div>
         <Button type='primary'  label='Get Started' rightIcon={<ArrowRight size={20}/>} />
         <Button type='primary' leftIcon={<Youtube size={20}/>} label='Continue with apple'/>

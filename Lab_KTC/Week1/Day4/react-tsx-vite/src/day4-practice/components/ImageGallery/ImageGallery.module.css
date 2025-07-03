@@ -1,0 +1,107 @@
+.galleryContainer {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 500px; /* Điều chỉnh chiều rộng tối đa */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.mainImageWrapper {
+  position: relative; /* Để các nút điều hướng có thể định vị tương đối với wrapper này */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  min-height: 400px; /* Đảm bảo đủ không gian cho ảnh */
+  background-color: #ffffff; /* Màu nền khi ảnh chưa tải hoặc kích thước không đều */
+  border-radius: 8px;
+  overflow: hidden; /* Đảm bảo ảnh không tràn ra ngoài */
+}
+
+.mainImage {
+  max-width: 100%;
+  max-height: 400px; /* Chiều cao tối đa */
+  object-fit: contain; /* Đảm bảo ảnh vừa vặn mà không bị cắt */
+  border-radius: 8px;
+  transition: opacity 0.3s ease-in-out; /* Hiệu ứng mờ khi chuyển ảnh */
+}
+
+.navButton {
+  background: rgba(255, 255, 255, 0.7); /* Nút hơi trong suốt */
+  border: 1px solid #ccc;
+  border-radius: 50%; /* Hình tròn */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Căn giữa theo chiều dọc */
+  z-index: 10; /* Đảm bảo nút nằm trên ảnh */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navButton:first-child {
+  left: 10px; /* Nút trái */
+}
+
+.navButton:last-child {
+  right: 10px; /* Nút phải */
+}
+
+.navButton svg { /* Định dạng icon bên trong nút */
+  color: #555;
+}
+
+
+.thumbnails {
+  display: flex;
+  justify-content: center; /* Căn giữa các thumbnails */
+  gap: 15px; /* Khoảng cách giữa các thumbnails */
+  margin-top: 20px;
+}
+
+.thumbnailWrapper {
+  width: 80px; /* Chiều rộng của thumbnail */
+  height: 80px; /* Chiều cao của thumbnail */
+  border: 2px solid #ccc; /* Viền mặc định */
+  border-radius: 5px;
+  overflow: hidden; /* Đảm bảo ảnh thumbnail không tràn ra ngoài */
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+
+.thumbnailWrapper:hover {
+  border-color: #f80; 
+  transform: translateY(-2px); /* Hiệu ứng nhấc nhẹ lên khi hover */
+}
+
+.activeThumbnail {
+  border-color: #f80; /* Viền cam khi active */
+  box-shadow: 0 0 0 3px rgba(255, 136, 0, 0.3); /* Hiệu ứng highlight */
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo ảnh thumbnail lấp đầy khung */
+}

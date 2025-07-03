@@ -1,0 +1,110 @@
+/* src/components/styles.module.css */
+
+/* Global Styles (Vẫn để ở đây vì index.tsx vẫn import nó) */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; */
+}
+.products-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* hoặc flex-start nếu bạn muốn các thẻ căn trái */
+  gap: 20px;
+}
+
+
+/* --- NEW STYLES FOR SINGLE PRODUCT DISPLAY CARD --- */
+.product-display-card {
+  position: relative;
+  width: 180px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff5722;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.product-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.product-name {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.4;
+
+}
+
+.product-prices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.price{
+    display: flex;
+    flex-direction: row;
+}
+
+.discounted-price {
+  font-size: 20px;
+  color: #d0021b;
+  font-weight: bold;
+}
+
+.original-price {
+  font-size: 15px;
+  color: #888;
+  text-decoration: line-through;
+  margin-left: 0;
+  margin-top: 5px;
+}
+
+.single-price {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+/* (Bạn có thể giữ lại các media queries đã có hoặc thêm mới) */
+@media (max-width: 768px) {
+  .product-display-card {
+    width: 90%; /* Điều chỉnh cho màn hình nhỏ hơn */
+  }
+}

@@ -1,0 +1,46 @@
+/* Các class names phải giống với key trong đối tượng 'styles' mà bạn dùng trong TSX */
+
+.starRatingContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Khoảng cách giữa các thành phần */
+  font-family: Arial, sans-serif; /* Font chữ tương tự */
+  font-size: 18px; /* Kích thước chữ */
+  padding: 15px; /* Thêm padding để dễ nhìn */
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.ratingText {
+  color: #333; /* Màu chữ gần giống */
+  white-space: nowrap; /* Ngăn không cho chữ bị xuống dòng */
+}
+
+.stars {
+  display: flex;
+  cursor: pointer;
+}
+
+.star {
+  font-size: 28px; /* Kích thước ngôi sao */
+  color: #ccc; /* Màu ngôi sao chưa được chọn */
+  transition: color 0.2s ease-in-out; /* Hiệu ứng chuyển màu mượt mà */
+}
+
+.filled {
+  color: #ffbf00; /* Màu ngôi sao đã được chọn (cam) */
+}
+
+.statusButton {
+  background-color: #5cb85c; /* Màu nền xanh lá cây */
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: default; /* Không cho con trỏ thay đổi khi di chuột qua button */
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 120px; /* Đảm bảo chiều rộng tối thiểu cho nút */
+  text-align: center;
+}

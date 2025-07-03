@@ -1,0 +1,139 @@
+/* src/components/styles.module.css */
+
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.app-container {
+  max-width: 1200px; /* Giới hạn chiều rộng tổng thể */
+  margin: 20px auto; /* Căn giữa và có khoảng cách trên/dưới */
+  padding: 20px;
+  background-color: #fff; /* Nền trắng cho toàn bộ phần danh sách sản phẩm */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  /* Bỏ các thuộc tính flexbox cũ của .app-container nếu nó chỉ chứa 1 card */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* min-height: 100vh; */
+}
+
+.section-title { /* Thêm lại class này nếu bạn muốn tiêu đề "Sản phẩm bán chạy" */
+  font-size: 28px;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-weight: bold;
+  text-align: center; /* Căn giữa tiêu đề */
+}
+
+.products-list-container { /* MỚI: Container cho các card sản phẩm */
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các card xuống dòng */
+  gap: 20px; /* Khoảng cách giữa các card */
+  justify-content: center; /* Căn giữa các card trong container */
+}
+
+
+/* --- Styles For SINGLE PRODUCT DISPLAY CARD (đã có từ trước) --- */
+.product-display-card {
+  position: relative;
+  width: 220px; /* Điều chỉnh chiều rộng cho phù hợp để nhiều sản phẩm vừa trên 1 dòng */
+  padding: 15px; /* Giảm padding một chút */
+  border: 1px solid #eee;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Giảm độ đổ bóng */
+  background-color: #fff;
+  transition: transform 0.2s ease-in-out; /* Thêm hiệu ứng hover */
+}
+
+.product-display-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff5722;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px; /* Điều chỉnh kích thước font */
+  font-weight: bold;
+  z-index: 10;
+}
+
+.product-image {
+  width: 120px; /* Kích thước ảnh nhỏ hơn để vừa trong card */
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.product-name {
+  font-size: 16px; /* Kích thước chữ nhỏ hơn cho tên */
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.3;
+  height: 2.6em; /* Giới hạn 2 dòng */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.product-prices {
+  margin-top: auto; /* Đẩy giá xuống cuối card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.discounted-price {
+  font-size: 18px; /* Kích thước giá giảm */
+  color: #d0021b;
+  font-weight: bold;
+}
+
+.original-price {
+  font-size: 14px; /* Kích thước giá gốc */
+  color: #888;
+  text-decoration: line-through;
+  margin-top: 3px;
+}
+
+.single-price {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .products-list-container {
+    justify-content: space-around; /* Căn đều khi ít sản phẩm hơn */
+  }
+  .product-display-card {
+    width: calc(50% - 20px); /* 2 cột trên màn hình vừa */
+  }
+}
+
+@media (max-width: 580px) {
+  .product-display-card {
+    width: calc(100% - 20px); /* 1 cột trên màn hình nhỏ */
+  }
+}

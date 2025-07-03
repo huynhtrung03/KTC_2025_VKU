@@ -1,0 +1,40 @@
+/* Các class names phải giống với key trong đối tượng 'styles' mà bạn dùng trong TSX */
+
+.container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5em; /* Kích thước to hơn cho tiêu đề */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.text {
+  font-size: 1.2em;
+  color: #555;
+  display: flex; /* Dùng flexbox để căn chỉnh icon và text */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  gap: 10px; /* Khoảng cách giữa icon và text */
+}
+
+.icon {
+  font-size: 1.8em; /* Kích thước của icon like (có thể không cần thiết nếu dùng size prop của lucide) */
+  cursor: pointer; /* Biến con trỏ thành bàn tay */
+  color: #555; /* Màu xám nhạt mặc định cho icon khi chưa like (giống text) */
+  transition: color 0.2s ease-in-out; /* Hiệu ứng chuyển màu mượt mà */
+}
+
+/* Thêm hiệu ứng hover cho trạng thái chưa liked, nếu bạn muốn */
+.icon:hover {
+  color: #333; /* Hơi tối hơn khi hover */
+}
+
+.iconLiked {
+  color: black; /* Icon chuyển sang màu đen khi đã được like */
+  /* cursor: default; /* Có thể bỏ nếu muốn click lần nữa để unlike */
+}
