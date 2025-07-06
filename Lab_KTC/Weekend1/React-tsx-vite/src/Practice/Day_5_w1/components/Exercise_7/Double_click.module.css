@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column; /* Xếp các phần tử theo cột */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  padding: 30px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 350px; /* Giới hạn chiều rộng */
+  margin: 50px auto; /* Căn giữa trang */
+}
+
+.button {
+  padding: 12px 25px;
+  font-size: 18px;
+  background-color: #ffc107; /* Màu vàng cam */
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  margin-bottom: 20px; /* Khoảng cách dưới nút */
+  outline: none;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #e0a800; /* Vàng đậm hơn khi rê chuột */
+  transform: translateY(-2px);
+}
+
+.messageBox {
+  margin-top: 15px;
+  padding: 15px 20px;
+  background-color: #d1ecf1; /* Nền xanh nhạt */
+  color: #0c5460; /* Chữ xanh đậm */
+  border: 1px solid #bee5eb; /* Viền xanh */
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  width: 80%;
+  opacity: 1; /* Mặc định là hiện */
+  transition: opacity 0.3s ease; /* Hiệu ứng mờ dần */
+}
+
+/* Bạn có thể thêm hiệu ứng ẩn/hiện bằng CSS animation nếu muốn phức tạp hơn,
+   nhưng ở đây chúng ta chỉ cần thay đổi `opacity` hoặc dùng `display: none`
+   bằng cách thêm/bỏ class nếu muốn. Hiện tại `showMessage &&` đã xử lý việc ẩn/hiện. */

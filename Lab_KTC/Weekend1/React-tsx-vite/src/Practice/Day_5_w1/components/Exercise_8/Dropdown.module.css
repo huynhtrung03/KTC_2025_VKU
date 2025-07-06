@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column; /* Xếp các phần tử theo cột */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  padding: 30px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 400px; /* Giới hạn chiều rộng */
+  margin: 50px auto; /* Căn giữa trang */
+}
+
+.title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.dropdown {
+  padding: 10px 15px;
+  font-size: 16px;
+  width: 80%; /* Chiều rộng của dropdown */
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  margin-bottom: 20px; /* Khoảng cách dưới dropdown */
+  outline: none;
+  cursor: pointer;
+  appearance: none; /* Bỏ kiểu dáng mặc định của trình duyệt */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292%22%20height%3D%22292%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2069L146%20208%205%2069z%22%2F%3E%3C%2Fsvg%3E'); /* Mũi tên xuống tùy chỉnh */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
+
+.dropdown:focus {
+  border-color: #007bff;
+}
+
+.displayText {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+}
+
+.selectedText {
+  color: #007bff; /* Màu xanh cho tên trái cây đã chọn */
+  font-weight: bold;
+}

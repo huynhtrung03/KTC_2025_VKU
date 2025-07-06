@@ -1,6 +1,6 @@
 // import React from 'react';
 // import NewsSection from './day4-practice/components/renderList_01/NewsSection';
-// import './day4-practice/components/renderList_01/renderList.module.css'; 
+// import styles from './day4-practice/components/renderList_01/renderList.module.css'; 
 
 
 
@@ -10,9 +10,6 @@
 //   views: number;
 //   id: string | number; 
 // }
-
-
-
 
 
 // function App() {
@@ -61,7 +58,7 @@
 
 // import NewsSection from './day4-practice/components/renderList_01/NewsSection';
 
-//bai04
+// bai04
 // import React from 'react';
 // import ProductDisplayCard from './day4-practice/components/renderList_04/ProductDisplayCard';
 // import type {ProductDisplayCardProps} from './day4-practice/components/renderList_04/ProductDisplayCard';
@@ -154,14 +151,24 @@
 
 
 
-// import React from 'react';
+import React from 'react';
 import Attributes from './day4-practice/components/Attributes';
 import LikeButton from './day4-practice/components/LikeButton/LikeButton';
 import StarRating from './day4-practice/components/Rating/StarRating';
 import ImageGallery from './day4-practice/components/ImageGallery/ImageGallery'; 
 import ButtonTabs from './day4-practice/components/ButtonTabs/ButtonTabs';
+import ArticlesList from './day4-practice/components/ArticlesList'
+import ButtonTabs2 from './day4-practice/components/ButtonTabs2/ButtonTabs2';
+
+import renderList_05 from './day4-practice/components/renderList_05/renderList_05'
 
 
+const articles = [
+  { id: 1, title: 'Ấn tượng đầu tiên Samsung Galaxy A32 4G: Với hơn 6 triệu đã có màn hình Super AMOLED 90Hz', thumbnail: 'images/hinh1.jpg', addTime: '4 năm trước' },
+  { id: 2, title: 'Google Pixel 5a dự kiến sẽ được ra mắt cùng thời điểm với Android 12', thumbnail: 'images/hinh1.jpg', addTime: '4 năm trước' },
+  { id: 2, title: 'Google Pixel 5a dự kiến sẽ được ra mắt cùng thời điểm với Android 12', thumbnail: 'images/hinh1.jpg', addTime: '4 năm trước' },
+  { id: 4, title: 'Galaxy A82 5G chuẩn bị ra mắt với chip flagship và màn hình trượt độc đáo, Samfans gom lúa đi là vừa', thumbnail: 'images/hinh1.jpg', addTime: '4 năm trước' },
+];
 
 const attributes = [
   { id: 1, label: 'Đen' },
@@ -178,10 +185,18 @@ const handleRatingChange = (newRating: number) => {
 function App() {
   return (
     
-
-    
-
     <div className="App">
+      <section className='section'>
+        <div className='section_header'>
+          <h2 className='section_title'>Tin tức</h2>
+          <div className='section_extra'>
+            <a className='all' href='#'>Xem tất cả</a>
+          </div>
+        </div>
+        <div className='section_body'>
+          <ArticlesList data={articles} />
+        </div>
+      </section>
       <main className='container'><Attributes data={attributes} />
       </main>
       <LikeButton />
@@ -190,7 +205,9 @@ function App() {
 
       <ImageGallery />
       <ButtonTabs />
+      <ButtonTabs2 />
 
+      <renderList_05 />
     </div>
   );
 }

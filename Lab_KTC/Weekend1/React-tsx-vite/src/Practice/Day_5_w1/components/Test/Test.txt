@@ -1,0 +1,174 @@
+import React, { useState } from 'react'; // Cần useState để lưu trạng thái rê chuột
+import styles from './HoverHighlight.module.css'; // File CSS để trang trí
+
+// Đây là component (thành phần) của chúng ta
+const HoverHighlight: React.FC = () => {
+  // 1. Tạo một "biến trạng thái" để biết chuột có đang rê vào hay không
+  // `isHovered` là giá trị hiện tại (true = đang rê vào, false = không rê vào). Ban đầu là false.
+  // `setIsHovered` là hàm dùng để CẬP NHẬT giá trị của `isHovered`
+  const [isHovered, setIsHovered] = useState(false); // Khởi tạo là không rê chuột
+
+  // 2. Hàm này sẽ chạy khi chuột RÊ VÀO khối div
+  const handleMouseEnter = () => {
+    setIsHovered(true); // Cập nhật trạng thái là ĐANG RÊ CHUỘT
+  };
+
+  // 3. Hàm này sẽ chạy khi chuột RỜI KHỎI khối div
+  const handleMouseLeave = () => {
+    setIsHovered(false); // Cập nhật trạng thái là KHÔNG RÊ CHUỘT NỮA
+  };
+
+  // 4. Phần giao diện mà component này sẽ hiển thị
+  return (
+    <div
+      className={`${styles.box} ${isHovered ? styles.highlight : ''}`}
+      // Khi chuột rê vào, gọi hàm `handleMouseEnter`
+      onMouseEnter={handleMouseEnter}
+      // Khi chuột rời đi, gọi hàm `handleMouseLeave`
+      onMouseLeave={handleMouseLeave}
+    >
+      <p className={styles.text}>Rê chuột vào đây!</p>
+    </div>
+  );
+};
+
+export default HoverHighlight; // Cho phép các file khác sử dụng component này
+
+
+
+
+
+
+.box {
+  width: 250px; /* Chiều rộng của khối */
+  height: 150px; /* Chiều cao của khối */
+  background-color: white; /* Màu nền mặc định là trắng */
+  border: 2px solid #ccc; /* Viền xám */
+  border-radius: 8px; /* Bo tròn góc */
+  display: flex; /* Để căn giữa chữ */
+  justify-content: center; /* Căn giữa chữ theo chiều ngang */
+  align-items: center; /* Căn giữa chữ theo chiều dọc */
+  margin: 50px auto; /* Căn giữa trang */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+  cursor: pointer; /* Biến con trỏ thành bàn tay */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Đổ bóng nhẹ */
+}
+
+/* Class này sẽ được thêm vào khi chuột rê vào */
+.highlight {
+  background-color: yellow; /* Màu nền chuyển sang vàng */
+}
+
+.text {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+bài 6
+
+
+
+
+import React, { useState } from 'react'; // Cần useState để lưu trữ tên phím
+import styles from './KeyPressDisplay.module.css'; // File CSS để trang trí
+
+// Đây là component (thành phần) của chúng ta
+const KeyPressDisplay: React.FC = () => {
+  // 1. Biến trạng thái để lưu trữ tên của phím cuối cùng được bấm
+  // `lastKeyPressed` là tên phím (ban đầu là 'chưa có gì')
+  // `setLastKeyPressed` là hàm dùng để CẬP NHẬT giá trị này
+  const [lastKeyPressed, setLastKeyPressed] = useState('chưa có gì');
+
+  // 2. Hàm này sẽ chạy mỗi khi có một phím được bấm xuống trong ô input
+  // `event` chứa thông tin về sự kiện bấm phím
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    // `event.key` là tên của phím mà người dùng vừa bấm
+    // Ví dụ: 'a', 'Enter', 'Shift', 'ArrowUp'
+    setLastKeyPressed(event.key);
+  };
+
+  // 3. Phần giao diện mà component này sẽ hiển thị
+  return (
+    <div className={styles.container}>
+      {/* Ô nhập liệu */}
+      <input
+        type="text" // Kiểu là ô nhập chữ
+        className={styles.inputField}
+        placeholder="Bấm phím nào đó vào đây..." // Chữ gợi ý
+        // Khi có phím được bấm xuống trong ô input, gọi hàm `handleKeyDown`
+        onKeyDown={handleKeyDown}
+      />
+
+      {/* Chỗ hiển thị tên phím cuối cùng */}
+      <p className={styles.displayText}>
+        Phím cuối cùng: <span className={styles.keyName}>{lastKeyPressed}</span>
+      </p>
+    </div>
+  );
+};
+
+export default KeyPressDisplay; // Cho phép các file khác sử dụng component này
+
+
+
+
+.container {
+  display: flex;
+  flex-direction: column; /* Xếp các phần tử theo cột (trên xuống dưới) */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  padding: 30px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 400px; /* Giới hạn chiều rộng */
+  margin: 50px auto; /* Căn giữa trang */
+}
+
+.inputField {
+  padding: 10px 15px;
+  font-size: 16px;
+  width: 80%; /* Chiều rộng của ô input */
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px; /* Khoảng cách dưới ô input */
+  outline: none; /* Bỏ viền xanh khi focus */
+  transition: border-color 0.3s ease;
+}
+
+.inputField:focus {
+  border-color: #007bff; /* Viền xanh khi đang gõ */
+}
+
+.displayText {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+}
+
+.keyName {
+  color: #007bff; /* Màu xanh cho tên phím */
+  font-weight: bold;
+}
+
+
+
+import React from 'react';
+import KeyPressDisplay from './components/KeyPressDisplay'; // Import component KeyPressDisplay
+
+function App() {
+  return (
+    <div className="App">
+      {/* Đặt component KeyPressDisplay vào đây để nó hiển thị */}
+      <KeyPressDisplay />
+    </div>
+  );
+}
+
+export default App;

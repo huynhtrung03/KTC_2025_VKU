@@ -1,0 +1,217 @@
+/* Container chính của form */
+.container {
+  font-family: 'Inter', sans-serif;
+  max-width: 600px; /* Chiều rộng tối đa cho form */
+  margin: 40px auto; /* Căn giữa và tạo khoảng cách trên dưới */
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 20px; /* Khoảng cách giữa các nhóm trường */
+}
+
+.label {
+  display: block; /* Đảm bảo label nằm trên input */
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 500;
+  font-size: 0.95em;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  box-sizing: border-box; /* Đảm bảo padding và border không làm tăng width */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none; /* Bỏ viền outline mặc định */
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Kiểu cho input khi có lỗi */
+.inputError {
+  border-color: #dc3545 !important; /* Viền đỏ */
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25) !important;
+}
+
+/* Chữ hiển thị lỗi */
+.errorText {
+  color: #dc3545; /* Màu đỏ */
+  font-size: 0.85em;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+/* Nhóm radio buttons */
+.radioGroup {
+  display: flex;
+  gap: 20px; /* Khoảng cách giữa các lựa chọn radio */
+  flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  color: #555;
+  cursor: pointer;
+}
+
+.radioLabel input[type="radio"] {
+  margin-right: 8px;
+  /* Bạn có thể tạo kiểu tùy chỉnh cho radio nếu muốn, nhưng đây là mặc định */
+}
+
+/* Nhóm checkbox */
+.checkboxGroup {
+  display: flex;
+  flex-direction: column; /* Xếp các checkbox theo cột */
+  gap: 10px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  color: #555;
+  cursor: pointer;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  margin-right: 8px;
+  /* Bạn có thể tạo kiểu tùy chỉnh cho checkbox nếu muốn */
+}
+
+/* Input file (ảnh đại diện) */
+.fileInput {
+  /* Input type="file" rất khó để custom CSS trực tiếp trên mọi trình duyệt.
+     Đây là cách đơn giản nhất để nó trông khá ổn.
+     Nếu cần custom sâu hơn, thường phải ẩn input gốc và tạo button giả. */
+  padding: 10px 0; /* Giảm padding ngang mặc định của trình duyệt */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+.fileName {
+  display: block; /* Hiển thị tên file bên dưới input */
+  margin-top: 5px;
+  font-size: 0.85em;
+  color: #666;
+}
+
+/* Textarea (Tiểu sử) */
+.textarea {
+  min-height: 80px; /* Chiều cao tối thiểu */
+  resize: vertical; /* Chỉ cho phép kéo giãn theo chiều dọc */
+}
+
+/* Đếm ký tự cho Bio */
+.charCount {
+  text-align: right;
+  font-size: 0.8em;
+  color: #777;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+/* Nút Đăng ký */
+.submitButton {
+  width: 100%;
+  padding: 15px;
+  background-color: #28a745; /* Màu xanh lá cây */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 30px; /* Khoảng cách trên nút */
+}
+
+.submitButton:hover {
+  background-color: #218838; /* Màu xanh đậm hơn khi rê chuột */
+  transform: translateY(-2px); /* Nâng nhẹ nút lên */
+}
+
+.submitButton:active {
+  transform: translateY(0); /* Trở lại vị trí cũ khi click */
+}
+
+/* Thông báo thành công */
+.successMessage {
+  background-color: #d4edda; /* Nền xanh nhạt */
+  color: #155724; /* Chữ xanh đậm */
+  border: 1px solid #c3e6cb; /* Viền xanh */
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px auto;
+    padding: 25px;
+  }
+
+  .title {
+    font-size: 1.8em;
+  }
+
+  .input,
+  .select,
+  .textarea,
+  .submitButton {
+    font-size: 0.95em;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
+
+  .radioGroup {
+    flex-direction: column; /* Xếp radio theo cột trên màn hình siêu nhỏ */
+    gap: 10px;
+  }
+}

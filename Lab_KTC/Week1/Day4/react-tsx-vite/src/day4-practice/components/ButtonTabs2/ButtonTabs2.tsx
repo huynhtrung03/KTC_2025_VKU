@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './ButtonTabs.module.css';
+import styles from './ButtonTabs2.module.css';
 
 // Định nghĩa kiểu dữ liệu cho mỗi tab
 interface TabData {

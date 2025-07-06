@@ -1,0 +1,139 @@
+/* Container chính của máy tính */
+.calculator {
+  font-family: 'Inter', sans-serif; /* Font chữ Inter */
+  max-width: 320px; /* Chiều rộng tối đa của máy tính */
+  margin: 50px auto; /* Căn giữa trang */
+  background-color: #333; /* Nền tối cho máy tính */
+  border-radius: 12px; /* Bo tròn góc */
+  overflow: hidden; /* Đảm bảo các góc bo tròn đẹp */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Bóng đổ đẹp */
+  border: 1px solid #555; /* Viền nhẹ */
+}
+
+/* Màn hình hiển thị */
+.display {
+  background-color: #222; /* Nền màn hình */
+  color: #fff; /* Chữ trắng */
+  font-size: 2.5em; /* Cỡ chữ lớn */
+  padding: 20px;
+  text-align: right; /* Căn phải */
+  min-height: 80px; /* Chiều cao tối thiểu */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Căn nội dung xuống dưới và sang phải */
+  word-wrap: break-word; /* Xuống dòng nếu quá dài */
+  overflow-x: auto; /* Tạo thanh cuộn ngang nếu số quá dài */
+  border-bottom: 1px solid #444;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Màu đỏ khi có lỗi */
+.error {
+  color: #ff6b6b; /* Màu đỏ nổi bật cho lỗi */
+  font-size: 2em;
+}
+
+/* Lưới các nút bấm */
+.buttonsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cột bằng nhau */
+  gap: 1px; /* Khoảng cách nhỏ giữa các nút */
+  background-color: #444; /* Màu nền cho lưới để tạo đường kẻ giữa các nút */
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* Kiểu dáng chung cho tất cả các nút */
+.button {
+  padding: 20px 0;
+  font-size: 1.5em;
+  border: none;
+  background-color: #555; /* Nền nút mặc định */
+  color: #fff; /* Chữ trắng */
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  border-radius: 0; /* Bỏ bo tròn mặc định của nút */
+  outline: none; /* Bỏ viền khi focus */
+}
+
+.button:hover {
+  background-color: #666; /* Đậm hơn khi rê chuột */
+  transform: scale(1.02); /* Phóng to nhẹ */
+}
+
+.button:active {
+  background-color: #777; /* Đậm hơn khi click */
+  transform: scale(0.98); /* Co nhỏ nhẹ */
+}
+
+/* Kiểu riêng cho nút số */
+.digit {
+  background-color: #6c757d; /* Màu xám đậm hơn cho số */
+}
+
+.digit:hover {
+  background-color: #7c858d;
+}
+
+/* Kiểu riêng cho nút phép toán */
+.operator {
+  background-color: #ff8c00; /* Màu cam nổi bật */
+  color: #fff;
+}
+
+.operator:hover {
+  background-color: #e07b00;
+}
+
+/* Kiểu riêng cho nút xóa (C) */
+.clear {
+  background-color: #dc3545; /* Màu đỏ */
+  color: #fff;
+}
+
+.clear:hover {
+  background-color: #c82333;
+}
+
+/* Kiểu riêng cho nút thập phân (.) */
+.decimal {
+  background-color: #6c757d; /* Giống nút số */
+}
+
+.decimal:hover {
+  background-color: #7c858d;
+}
+
+/* Kiểu riêng cho nút bằng (=) */
+.equals {
+  background-color: #28a745; /* Màu xanh lá cây */
+  color: #fff;
+}
+
+.equals:hover {
+  background-color: #218838;
+}
+
+/* Nút bị vô hiệu hóa khi có lỗi */
+.button:disabled {
+  background-color: #888 !important; /* Mờ đi */
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  .calculator {
+    max-width: 95%; /* Chiếm gần hết chiều rộng màn hình nhỏ */
+    margin: 20px auto;
+  }
+  .display {
+    font-size: 2em;
+    min-height: 70px;
+  }
+  .button {
+    padding: 15px 0;
+    font-size: 1.2em;
+  }
+}

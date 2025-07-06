@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  flex-direction: column; /* Xếp các phần tử theo cột */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  padding: 30px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 500px; /* Giới hạn chiều rộng */
+  margin: 50px auto; /* Căn giữa trang */
+}
+
+.title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.searchInput {
+  padding: 12px 15px;
+  font-size: 16px;
+  width: 90%; /* Chiều rộng của ô tìm kiếm */
+  max-width: 450px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px; /* Khoảng cách dưới ô tìm kiếm */
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.searchInput:focus {
+  border-color: #007bff; /* Viền xanh khi focus */
+}
+
+.itemList {
+  list-style-type: none; /* Bỏ dấu chấm đầu dòng */
+  padding: 0;
+  margin: 0;
+  width: 90%;
+  max-height: 300px; /* Giới hạn chiều cao để có thanh cuộn nếu quá nhiều */
+  overflow-y: auto; /* Tạo thanh cuộn dọc */
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.listItem {
+  padding: 10px 15px;
+  border-bottom: 1px solid #f0f0f0; /* Đường kẻ dưới mỗi mục */
+  font-size: 16px;
+  color: #555;
+  transition: background-color 0.2s ease;
+}
+
+.listItem:last-child {
+  border-bottom: none; /* Bỏ đường kẻ cuối cùng */
+}
+
+.listItem:hover {
+  background-color: #f5f5f5; /* Nền xám nhạt khi rê chuột */
+}
+
+.noResults {
+  padding: 15px;
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}

@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column; /* Xếp các phần tử theo cột (trên xuống dưới) */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  padding: 30px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 300px; /* Giới hạn chiều rộng */
+  margin: 50px auto; /* Căn giữa trang */
+}
+
+.toggleButton {
+  padding: 12px 25px;
+  font-size: 18px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease; /* Hiệu ứng mượt mà */
+  margin-bottom: 20px;
+  outline: none; /* Bỏ viền khi click (focus) */
+}
+
+/* Màu nền khi công tắc đang TẮT */
+.off {
+  background-color: #28a745; 
+}
+
+/* Màu nền khi công tắc đang BẬT */
+.on {
+  background-color: #dc3545; 
+}
+
+.toggleButton:hover {
+  transform: translateY(-2px); /* Nâng nhẹ nút lên khi rê chuột */
+}
+
+/* Chữ hiển thị trạng thái */
+.stateText {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+}
