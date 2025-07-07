@@ -1,0 +1,73 @@
+/* src/components/WeatherApp/CurrentWeather.module.css */
+.currentWeatherCard {
+  background-color: #a7d9ff; /* Màu xanh nhẹ */
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  backdrop-filter: blur(5px); /* Hiệu ứng blur */
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.location {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.temperature {
+  font-size: 5em; /* 26° */
+  font-weight: 600;
+  line-height: 1;
+}
+
+.condition {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 1.5em; /* Sunny */
+  font-weight: 500;
+}
+
+.weatherIcon {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.detailCard {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 15px 25px;
+  margin: 0 10px;
+  flex-basis: 45%;
+}
+
+.detailValue {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.detailLabel {
+  font-size: 0.9em;
+  opacity: 0.8;
+}

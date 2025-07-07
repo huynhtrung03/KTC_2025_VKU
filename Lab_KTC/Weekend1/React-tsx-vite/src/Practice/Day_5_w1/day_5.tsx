@@ -26,9 +26,9 @@ export const Day05 = () => {
         <Exercise_8 />
         <Exercise_9 />
         <Exercise_10 /> */}
-        {/* <Calculator /> */}
+        <Calculator />
         {/* <RegistrationForm /> */}
-        <ShoppingCart />
+        {/* <ShoppingCart /> */}
 
 
     </div>
