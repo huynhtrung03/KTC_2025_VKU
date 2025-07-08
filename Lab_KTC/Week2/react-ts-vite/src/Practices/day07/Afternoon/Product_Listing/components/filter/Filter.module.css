@@ -1,0 +1,43 @@
+.sidebar {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  min-width: 200px; /* Đảm bảo sidebar có đủ chiều rộng */
+  box-sizing: border-box;
+}
+
+.sidebarTitle {
+  font-size: 1.4em;
+  font-weight: bold; /* Để tiêu đề "Bộ lọc" đậm như ảnh */
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.categoryList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Khoảng cách giữa các checkbox */
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  font-size: 1.1em; /* Kích thước chữ cho tên danh mục */
+  color: #555;
+  cursor: pointer;
+}
+
+.checkboxInput {
+  margin-right: 12px; /* Khoảng cách giữa checkbox và chữ */
+  width: 20px; /* Kích thước của checkbox */
+  height: 20px;
+  accent-color: #f78d38; /* Màu cam cho checkbox được chọn */
+  cursor: pointer;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 10px;
+}

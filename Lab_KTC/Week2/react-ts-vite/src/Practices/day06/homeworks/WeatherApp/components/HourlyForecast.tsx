@@ -12,8 +12,7 @@ const HourlyForecast: React.FC<HourlyForecastProps> = ({ hourlyData }) => {
     return `https:${iconPath}`;
   };
 
-  // Lấy 4 giờ tiếp theo (hoặc số lượng bạn muốn hiển thị)
-  const displayHours = hourlyData.slice(0, 12);
+  const displayHours = hourlyData.slice(0, 12); 
 
   return (
     <div className={styles.hourlyForecastCard}>
