@@ -1,6 +1,5 @@
-/* src/components/Header/Header.module.css */
 .header {
-  background-color: #f78d38; /* Màu cam giống hình mẫu */
+  background-color: #f78d38; 
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
@@ -20,9 +19,9 @@
 }
 
 .navbarNav {
-  flex-grow: 1; /* Cho phép nav chiếm hết không gian còn lại */
+  flex-grow: 1; 
   display: flex;
-  justify-content: flex-end; /* Căn giữa các link điều hướng */
+  justify-content: flex-end; 
   margin: 30px;
 }
 
@@ -31,11 +30,11 @@
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 30px; /* Khoảng cách giữa các link */
+  gap: 30px; 
 }
 
 .navItem {
-  position: relative; /* Dùng cho dropdown nếu có */
+  position: relative; 
 }
 
 .navLink {
@@ -55,14 +54,14 @@
   text-decoration: none;
   font-size: 1.1em;
   padding: 5px 0;
-  border-bottom: 2px solid white; /* Gạch chân khi active */
+  border-bottom: 2px solid white; 
 }
 
 .cartIcon {
   font-size: 1.4em;
   cursor: pointer;
   color: #f78d38;
-  background-color: #fff; /* Nền cho icon giỏ hàng */
+  background-color: #fff; 
   padding: 0 8px;
   border-radius: 5px;
   display: flex;
@@ -70,28 +69,3 @@
   gap: 5px;
 }
 
-/* Style cho dropdown (nếu bạn triển khai) */
-/* .dropdownContent {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown:hover .dropdownContent {
-  display: block;
-}
-
-.dropdownContent a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdownContent a:hover {
-  background-color: #f1f1f1;
-} */

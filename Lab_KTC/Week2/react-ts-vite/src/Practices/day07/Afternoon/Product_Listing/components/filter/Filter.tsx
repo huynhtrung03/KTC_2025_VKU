@@ -32,12 +32,10 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ onCategoryChange, selecte
 
 
 
-  // Tick "Tất cả" sẽ bỏ chọn hết
   const handleAllChange = () => {
     onCategoryChange([]);
   };
 
-  // Tick từng mục, có thể chọn nhiều mục
   const handleCheckboxChange = (categoryId: number) => {
   let newSelectedIds: number[];
   if (selectedCategoryIds.includes(categoryId)) {
@@ -45,19 +43,14 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ onCategoryChange, selecte
   } else {
     newSelectedIds = [...selectedCategoryIds, categoryId];
   }
-  // Không kiểm tra chọn hết nữa, chỉ cập nhật danh sách đã chọn
   onCategoryChange(newSelectedIds);
   };
-// "Tất cả" được tick khi không chọn mục nào
   const isAllChecked = selectedCategoryIds.length === 0;
   
 
 
 
-  // "Tất cả" được tick khi không chọn mục nào hoặc đã tick hết tất cả mục con
-  // const isAllChecked =
-  //   selectedCategoryIds.length === 0 ||
-  //   selectedCategoryIds.length === categories.length;
+ 
 
   return (
     <div className={styles.sidebar}>

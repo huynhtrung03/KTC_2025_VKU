@@ -1,4 +1,3 @@
-/* src/pages/CategoryPage.module.css */
 .categoryPageContainer {
   padding: 20px;
   max-width: 1200px;
@@ -24,17 +23,16 @@
 
 .contentWrapper {
   display: flex;
-  gap: 30px; /* Khoảng cách giữa sidebar và nội dung chính */
-  align-items: flex-start; /* Căn trên cùng của các mục flex */
+  gap: 30px;
+  align-items: flex-start; 
 }
 
 .sidebarSection {
-  flex: 0 0 250px; /* Cố định chiều rộng sidebar là 250px */
-  /* flex-basis: 250px; */ /* Cách khác để cố định chiều rộng */
+  flex: 0 0 250px; 
 }
 
 .mainContent {
-  flex-grow: 1; /* Phần nội dung chính (lưới sản phẩm + phân trang) chiếm hết không gian còn lại */
+  flex-grow: 1; 
 }
 
 .message, .errorMessage {
@@ -52,7 +50,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .contentWrapper {
-    flex-direction: column; /* Trên màn hình nhỏ, sidebar và nội dung xếp chồng lên nhau */
+    flex-direction: column; 
   }
 
   .sidebarSection {

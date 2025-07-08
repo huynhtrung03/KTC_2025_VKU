@@ -1,4 +1,3 @@
-// src/pages/CategoryPage.tsx
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Filter from '../components/filter/Filter';
@@ -42,27 +41,21 @@ const CategoryPage: React.FC = () => {
         let totalCountEstimate = 0;
 
         if (selectedCategoryIds.length > 0) {
-          // API escuelajs.co chỉ cho phép fetch 1 category 1 lúc với endpoint /categories/{id}/products
-          // Để hỗ trợ nhiều category, bạn sẽ cần fetch từng category và kết hợp lại,
-          // hoặc filter client-side nếu tổng số sản phẩm không quá lớn.
-          // Với bài này, tôi sẽ lấy sản phẩm từ category đầu tiên được chọn.
+         
           const firstSelectedCategoryId = selectedCategoryIds[0];
           fetchedProducts = await fetchProducts({
             offset,
             limit: PRODUCTS_PER_PAGE,
             categoryId: firstSelectedCategoryId
           });
-          // API không trả về tổng số sản phẩm cho category, nên phải ước tính.
-          // Giả định mỗi category có khoảng 20 sản phẩm để tính totalPages.
+          
           totalCountEstimate = 10;
         } else {
-          // Nếu không có category nào được chọn, lấy tất cả sản phẩm từ endpoint /products
-          // API này cũng không trả về tổng số lượng, nên phải ước tính.
+          
           fetchedProducts = await fetchProducts({
             offset,
             limit: PRODUCTS_PER_PAGE
           });
-          // Giả định có khoảng 100 sản phẩm tổng cộng để tính totalPages.
           totalCountEstimate = 50;
         }
 
@@ -77,9 +70,7 @@ const CategoryPage: React.FC = () => {
     };
 
     getProducts();
-  }, [currentPage, selectedCategoryIds]); // Re-fetch khi trang hoặc ID danh mục thay đổi
-
-  // Khi đổi trang
+  }, [currentPage, selectedCategoryIds]); 
   const handlePageChange = (page: number) => {
     setSearchParams({
       ...(selectedCategoryIds.length > 0 ? { id: selectedCategoryIds[0].toString() } : {}),
@@ -87,7 +78,6 @@ const CategoryPage: React.FC = () => {
     });
   };
 
-  // Khi đổi category
   const handleCategoryFilter = (ids: number[]) => {
     setSearchParams({
       ...(ids.length > 0 ? { id: ids[0].toString() } : {}),
@@ -112,7 +102,6 @@ const CategoryPage: React.FC = () => {
           />
         </div>
 
-        {/* Phần hiển thị sản phẩm và phân trang */}
         <div className={styles.mainContent}>
           {loading && <p className={styles.message}>Đang tải sản phẩm...</p>}
           {error && <p className={styles.errorMessage}>{error}</p>}

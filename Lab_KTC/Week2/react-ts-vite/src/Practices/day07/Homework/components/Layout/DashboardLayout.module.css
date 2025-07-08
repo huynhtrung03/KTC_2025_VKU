@@ -1,0 +1,33 @@
+.dashboardContainer {
+  display: flex;
+  height: 100vh; 
+  overflow: hidden; 
+}
+
+.mainContentArea {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f2f5;
+  overflow-y: auto; 
+}
+
+.content {
+  padding: 25px; 
+  flex-grow: 1; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboardContainer {
+    flex-direction: column; 
+  }
+
+  .sidebar {
+    width: 100%; 
+    height: auto; 
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0; 
+    padding: 10px 15px;
+  }
+}

@@ -1,12 +1,12 @@
 import type { Product, Category } from '../types/product';
 
-const BASE_API_URL = 'https://api.escuelajs.co/api/v1'; // API cho products và pagination
-const CATEGORIES_API_URL = 'https://api.escuelajs.co/api/v1/categories'; // API cho categories (đã sửa để khớp với escuelajs.co)
+const BASE_API_URL = 'https://api.escuelajs.co/api/v1'; 
+const CATEGORIES_API_URL = 'https://api.escuelajs.co/api/v1/categories'; 
 
 interface ProductQueryParams {
   offset?: number;
   limit?: number;
-  categoryId?: number; // Thêm tham số categoryId
+  categoryId?: number; 
 }
 
 // Lấy danh sách các danh mục
@@ -17,8 +17,6 @@ export const fetchCategories = async (): Promise<Category[]> => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data: Category[] = await response.json();
-    // API Platzi có thể trả về một số category không có sản phẩm hoặc lỗi
-    // API escuelajs.co/api/v1/categories trả về danh mục tốt hơn
     return data;
   } catch (error) {
     console.error("Failed to fetch categories:", error);

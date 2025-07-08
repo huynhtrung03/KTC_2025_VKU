@@ -4,16 +4,16 @@ export interface Product {
   title: string;
   price: number;
   description: string;
-  images: string[]; // Mảng các URL hình ảnh
+  images: string[]; 
   creationAt: string;
   updatedAt: string;
-  category: Category; // Sản phẩm có một đối tượng category
+  category: Category; 
 }
 
 export interface Category {
   id: number;
   name: string;
-  image: string; // URL hình ảnh của danh mục
+  image: string; 
   creationAt: string;
   updatedAt: string;
 }

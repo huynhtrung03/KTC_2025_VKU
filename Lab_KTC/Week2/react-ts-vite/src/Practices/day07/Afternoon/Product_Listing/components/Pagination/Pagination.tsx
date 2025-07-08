@@ -1,4 +1,3 @@
-// src/components/Pagination/Pagination.tsx
 import React from 'react';
 import styles from './Pagination.module.css';
 
