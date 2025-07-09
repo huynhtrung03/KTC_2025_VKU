@@ -1,6 +1,6 @@
-import React from 'react'
-import Create from './components/Create';
-import List from  './components/List';
+// import React from 'react'
+// import Create from './components/Create';
+// import List from  './components/List';
 import  WeatherApp from './homeworks/WeatherApp/components/WeatherApp';
 
 export default function Day_6() {

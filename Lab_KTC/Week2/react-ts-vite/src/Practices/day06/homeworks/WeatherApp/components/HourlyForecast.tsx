@@ -1,8 +1,7 @@
 // src/components/WeatherApp/HourlyForecast.tsx
 import React from 'react';
 import styles from './HourlyForecast.module.css';
-import type { HourlyForecastItem as HourlyForecastItemType } from '../../types/weather';
-
+import type { HourlyForecastItem } from '../../WeatherApp/types/weather';
 interface HourlyForecastProps {
   hourlyData: HourlyForecastItem[];
 }

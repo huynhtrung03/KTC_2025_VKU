@@ -1,6 +1,6 @@
-import React from 'react';
-import SpaExample from './Example/SpaExample';
-import  AppProduct from './Afternoon/Product_Listing/main';
+// import React from 'react';
+// import SpaExample from './Example/SpaExample';
+// import  AppProduct from './Afternoon/Product_Listing/main';
   
 import Dashboard from './Homework/main';
 
@@ -12,7 +12,7 @@ export default function Day_7() {
   return (
     <div>
         {/* <SpaExample /> */}
-        <AppProduct />
+        {/* <AppProduct /> */}
         <Dashboard />
     </div>
     
