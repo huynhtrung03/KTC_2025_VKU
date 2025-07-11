@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-// import "./App.css";
 import { NavBar } from "./components/HeaderNav";
 import { LogInPage } from "./pages/Login";
 import { AccessDeniedPage } from "./pages/Accessdenied";
