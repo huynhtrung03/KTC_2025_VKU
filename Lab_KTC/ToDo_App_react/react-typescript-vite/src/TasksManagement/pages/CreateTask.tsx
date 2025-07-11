@@ -224,7 +224,7 @@ export const CreateTaskPage = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-pink-400 text-white py-2 rounded hover:bg-pink-600 transition duration-200"
+            className="w-full bg-sky-400 text-white py-2 rounded hover:bg-sky-600 transition duration-200"
           >
             Create Task
           </button>

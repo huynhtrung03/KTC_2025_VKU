@@ -25,3 +25,14 @@ export interface User {
   email: string;
   access_token: string;
 }
+
+
+export interface UpdateTaskInput {
+  title: string;
+  start_date: string;
+  due_date?: string;
+  description?: string;
+  status: "to_do" | "in_progress" | "done";
+  priority: "low" | "medium" | "high";
+  assignee_id?: number;
+}

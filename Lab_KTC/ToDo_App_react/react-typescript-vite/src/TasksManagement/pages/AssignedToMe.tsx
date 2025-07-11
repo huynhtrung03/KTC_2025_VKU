@@ -46,11 +46,11 @@ export const MyTaskPage = () => {
     return matches;
   });
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 ">
       <SearchTasks onSearch={handleOnSearch} />
 
-      <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden text-sm">
-        <thead className="bg-gray-300 text-gray-700">
+      <table className="min-w-full bg-white border border--200 rounded-lg overflow-hidden text-sm">
+        <thead className="bg-sky-100 text-gray-700">
           <tr>
             <th className="py-3 px-4 text-left border-b border-gray-200">
               Task ID
@@ -134,7 +134,7 @@ export const MyTaskPage = () => {
               <td className="py-2 px-4">{task.assignee_id}</td>
               <td className="py-2 px-4">
                 <Link to={`/update-task/${task.id}`}>
-                  <button className="bg-pink-400 hover:bg-pink-600 text-white px-3 py-1 rounded text-sm">
+                  <button className="bg-sky-400 hover:bg-sky-600 text-white px-3 py-1 rounded text-sm">
                     Edit
                   </button>
                 </Link>

@@ -90,7 +90,7 @@ export default function SearchTasks({ onSearch }: Props) {
         <div>
           <button
             type="submit"
-            className="bg-pink-400 text-white py-2 px-4 rounded hover:bg-pink-600 transition font-medium"
+            className="bg-sky-400 text-white py-2 px-4 rounded hover:bg-sky-600 transition font-medium"
           >
             Search
           </button>

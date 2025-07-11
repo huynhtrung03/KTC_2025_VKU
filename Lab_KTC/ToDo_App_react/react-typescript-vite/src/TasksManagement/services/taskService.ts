@@ -1,4 +1,5 @@
 import type { Task } from "../types/types";
+import type { UpdateTaskInput } from "../types/types";
 
 const baseUrl ="https://server.aptech.io";
 const defaultHeaders = {
@@ -67,15 +68,24 @@ export const getTaskById = async (id: number) => {
     const data = await response.json();
     return data;
 }
-export const updateTask = async (id: number, task: Task) => {
-    const response = await fetch(`${baseUrl}/workspaces/tasks/${id}`, {
-        method: 'PATCH',
-        headers: defaultHeaders,
-        body: JSON.stringify(task),
-    });
-    if (!response.ok) {
-        throw new Error("Failed to update task");
-    }
-    const data = await response.json();
-    return data;
-}
+// export const updateTask = async (id: number, task: Task) => {
+//     const response = await fetch(`${baseUrl}/workspaces/tasks/${id}`, {
+//         method: 'PATCH',
+//         headers: defaultHeaders,
+//         body: JSON.stringify(task),
+//     });
+//     if (!response.ok) {
+//         throw new Error("Failed to update task");
+//     }
+//     const data = await response.json();
+//     return data;
+// }
+
+export const updateTask = async (id: number, task: UpdateTaskInput) => {
+  const response = await fetch(`${baseUrl}/workspaces/tasks/${id}`, {
+    method: 'PATCH',
+    headers: defaultHeaders,
+    body: JSON.stringify(task),
+  });
+  return response.json();
+};

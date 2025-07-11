@@ -1,4 +1,3 @@
-// components/NavBar.tsx
 import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import AuthContext from "../context";
@@ -21,10 +20,17 @@ export const NavBar = () => {
   };
 
   return (
-    <nav className="bg-pink-200 text-black px-5 py-4">
+    <nav className="bg-sky-200 text-black px-5 py-4">
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <div className="text-2xl font-semibold">TASK-MANAGEMENT</div>
+        <div className="flex items-center space-x-2 text-2xl font-semibold">
+          <img
+            src="/images/tick.png"
+            alt="Logo"
+            className="w-12 h-12 object-cover rounded-full"
+          />
+          <span>Task Manager</span>
+        </div>
 
         {/* Desktop Menu + Auth Buttons */}
         <div className="hidden md:flex items-center space-x-2 ml-auto">
@@ -48,14 +54,14 @@ export const NavBar = () => {
           {user ? (
             <button
               onClick={handleLogout}
-              className="px-4 py-2 rounded-lg text-sm font-medium bg-pink-300 text-gray-900 shadow-md hover:shadow-sm hover:bg-gray-100"
+              className="px-4 py-2 rounded-lg text-sm font-medium bg-sky-300 text-gray-900 shadow-md hover:shadow-sm hover:bg-sky-100"
             >
               Log Out
             </button>
           ) : (
             <button
               onClick={() => (window.location.href = "/login")}
-              className="px-4 py-2 rounded-lg text-sm font-medium bg-pink-300 text-gray-900 shadow-md hover:shadow-sm hover:bg-gray-100"
+              className="px-4 py-2 rounded-lg text-sm font-medium bg-sky-300 text-gray-900 shadow-md hover:shadow-sm hover:bg-sky-100"
             >
               Log In
             </button>
@@ -94,14 +100,14 @@ export const NavBar = () => {
           {user ? (
             <button
               onClick={handleLogout}
-              className="w-full bg-black text-white px-4 py-2 rounded-xl font-semibold hover:bg-gray-800"
+              className="w-full bg-sky-600 text-white px-4 py-2 rounded-xl font-semibold hover:bg-sky-800"
             >
               Log Out
             </button>
           ) : (
             <button
               onClick={() => (window.location.href = "/login")}
-              className="w-full bg-black text-white px-4 py-2 rounded-xl font-semibold hover:bg-gray-800"
+              className="w-full bg-sky-600 text-white px-4 py-2 rounded-xl font-semibold hover:bg-sky-800"
             >
               Log In
             </button>
