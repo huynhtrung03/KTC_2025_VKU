@@ -1,6 +1,4 @@
 
-
-
 import { Routes, Route, Link } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import CartPage from './pages/CartPage';
@@ -35,3 +33,5 @@ function ShoppingCart() {
 }
 
 export default ShoppingCart;
+
+
