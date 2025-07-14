@@ -1,3 +1,6 @@
+
+
+
 import React, { useState } from 'react';
 
 interface BuyerFormData {
@@ -59,27 +62,56 @@ export default function BuyerForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Buyer Form</h2>
-      <div>
-        <label>Name:</label><br />
-        <input name="name" value={formData.name} onChange={handleChange} />
-        {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-md mx-auto mt-8 p-6 border border-gray-300 rounded-xl shadow-lg bg-white"
+    >
+      <h2 className="text-2xl font-bold mb-4 text-center">Buyer Form</h2>
+
+      <div className="mb-4">
+        <label className="block font-medium text-gray-700 mb-1">Name:</label>
+        <input
+          type="text"
+          name="name"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+          value={formData.name}
+          onChange={handleChange}
+        />
+        {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
       </div>
 
-      <div>
-        <label>Email:</label><br />
-        <input name="email" value={formData.email} onChange={handleChange} />
-        {errors.email && <p style={{ color: 'red' }}>{errors.email}</p>}
+      <div className="mb-4">
+        <label className="block font-medium text-gray-700 mb-1">Email:</label>
+        <input
+          type="email"
+          name="email"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
       </div>
 
-      <div>
-        <label>Address:</label><br />
-        <input name="address" value={formData.address} onChange={handleChange} />
-        {errors.address && <p style={{ color: 'red' }}>{errors.address}</p>}
+      <div className="mb-4">
+        <label className="block font-medium text-gray-700 mb-1">Address:</label>
+        <input
+          type="text"
+          name="address"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+          value={formData.address}
+          onChange={handleChange}
+        />
+        {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address}</p>}
       </div>
 
-      <button type="submit">Submit</button>
+      <button
+        type="submit"
+        className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition"
+      >
+        Submit
+      </button>
     </form>
   );
 }
+
+
