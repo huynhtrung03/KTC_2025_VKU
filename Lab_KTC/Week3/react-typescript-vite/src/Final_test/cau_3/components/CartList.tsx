@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { useCart } from '../CartProvider';
 
 export default function CartList() {

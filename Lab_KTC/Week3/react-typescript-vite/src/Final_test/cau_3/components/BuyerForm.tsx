@@ -66,7 +66,7 @@ export default function BuyerForm() {
       onSubmit={handleSubmit}
       className="max-w-md mx-auto mt-8 p-6 border border-gray-300 rounded-xl shadow-lg bg-white"
     >
-      <h2 className="text-2xl font-bold mb-4 text-center">Buyer Form</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center">Form</h2>
 
       <div className="mb-4">
         <label className="block font-medium text-gray-700 mb-1">Name:</label>
