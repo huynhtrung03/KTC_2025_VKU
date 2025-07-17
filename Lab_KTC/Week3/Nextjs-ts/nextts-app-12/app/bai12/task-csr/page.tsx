@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import TaskTable from "../components/TaskTable";
-import type { Task } from "../types";
+import TaskTable from "../../bai12/components/TaskTable";
+import type { Task } from "../../bai12/types";
 
 const defaultHeaders = {
   'Content-Type': 'application/json',

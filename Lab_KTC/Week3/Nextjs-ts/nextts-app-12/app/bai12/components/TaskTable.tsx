@@ -26,7 +26,7 @@ export default function TaskTable({ tasks }: { tasks: Task[] }) {
             <td className="px-4 py-2">{t.due_date ? new Date(t.due_date).toLocaleDateString() : ""}</td>
             <td className="px-4 py-2">
               <Link
-                href={`/task-isr/${t.id}`}
+                href={`/bai12/task-isr/${t.id}`}
                 className="text-blue-600 hover:underline"
               >
                 View
