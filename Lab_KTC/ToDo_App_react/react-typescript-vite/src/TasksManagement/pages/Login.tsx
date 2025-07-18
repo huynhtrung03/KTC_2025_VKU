@@ -25,7 +25,7 @@ interface IFormInput {
 
 export const LogInPage = () => {
   const navigate = useNavigate();
-  const { login, error, loggedInUser } = useAuthStore((state) => state);
+  const { login, loggedInUser } = useAuthStore((state) => state);
 
   useEffect(() => {
     if (loggedInUser) {
