@@ -4,6 +4,7 @@ import BtnLogout from "../components/ui/Logout";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../lib/auth";
 import { redirect } from "next/navigation";
+import Image from "next/image";
 
 
 type Props = {
@@ -19,21 +20,17 @@ export default async function  Layout({ children }: Props) {
 
   return (
     <div className="flex flex-col min-h-screen ">
-      <header className="flex justify-between items-center bg-sky-500 text-white p-4 text-center h-16 z-10 fixed top-0 left-0 w-full">
-        <h1 className="text-2xl font-bold">Day 12</h1>
-        <nav className="flex justify-center gap-4">
-          {/* <a
-            href="/day12/homework"
-            className="px-4 py-2 rounded hover:bg-sky-700 transition"
-          >
-            Homework
-          </a>
-          <Link
-            href="/day12/afternoon"
-            className="px-4 py-2 rounded hover:bg-sky-700 transition"
-          >
-            Afternoon
-          </Link> */}
+      <header className="flex justify-between items-center bg-gray-400 text-white p-4 text-center h-16 z-10 fixed top-0 left-0 w-full">
+        <div className="flex items-center gap-3">
+          <Image
+            src="/image/tick.png"
+            alt="Logo"
+            width={90}
+            height={40}
+            className="rounded"
+          />
+          <h1 className="text-2xl font-bold">Task-Manage</h1>
+  </div>        <nav className="flex justify-center gap-4">
           <BtnLogout />
         </nav>
       </header>
@@ -47,12 +44,7 @@ export default async function  Layout({ children }: Props) {
           >
             Task-SSR
           </Link>
-          {/* <Link
-            href="/day12/afternoon/task-ssg"
-            className="px-4 py-2 rounded hover:bg-sky-400 transition"
-          >
-            Task-SSG
-          </Link> */}
+          
           <Link
             href="/dashboard/tasks-csr"
             className="px-4 py-2 rounded hover:bg-sky-400 transition"

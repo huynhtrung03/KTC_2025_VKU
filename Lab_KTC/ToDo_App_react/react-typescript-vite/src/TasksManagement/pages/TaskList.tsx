@@ -1,17 +1,43 @@
 import React, { useEffect } from "react";
 import type { Task } from "../types/types";
-import { fetchTasks } from "../services/taskService";
-import { Link } from "react-router";
+// import { fetchTasks } from "../services/taskService";
+import { Link, useNavigate } from "react-router";
 import SearchTasks from "../components/Fillter";
+import { useAuthStore } from "../useAuthStore";
+import apiClient from "../Libraries/apiClient";
+
 
 export const OurTasksPage = () => {
-  const [tasks, setTasks] = React.useState([]);
+  // const [tasks, setTasks] = React.useState([]);
+  // useEffect(() => {
+  //   const tasks = async () => {
+  //     try {
+  //       const data = await fetchTasks();
+  //       setTasks(data);
+  //       console.log("Tasks fetched successfully:", data);
+  //     } catch (error) {
+  //       console.error("Error fetching tasks:", error);
+  //     }
+  //   };
+  //   tasks();
+  // }, []);
+  const { loggedInUser } = useAuthStore((state) => state);
+  const [tasks, setTasks] = React.useState<any[]>([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!loggedInUser) {
+      console.error("User is not logged in, redirecting to login page...");
+      navigate("/login");
+    }
+  }, [loggedInUser, navigate]);
+
   useEffect(() => {
     const tasks = async () => {
       try {
-        const data = await fetchTasks();
-        setTasks(data);
-        console.log("Tasks fetched successfully:", data);
+        const tasks = (await apiClient.get("/workspaces/tasks")) as any[];
+        setTasks(tasks);
+        console.log("Tasks fetched successfully:", tasks);
       } catch (error) {
         console.error("Error fetching tasks:", error);
       }
@@ -46,7 +72,7 @@ export const OurTasksPage = () => {
   return (
     <div className="container mx-auto p-4">
       <SearchTasks onSearch={handleOnSearch} />
-      <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden text-sm">
+      <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden text-sm mt-6">
         <thead className="bg-sky-100 text-gray-700">
           <tr>
             <th className="py-3 px-4 text-left border-b border-gray-200">
@@ -130,14 +156,27 @@ export const OurTasksPage = () => {
               </td>
               <td className="py-2 px-4">{task.assignee_id}</td>
               <td className="py-2 px-4">
-                <Link to={`/update-task/${task.id}`}>
-                  <button className="bg-sky-400 hover:bg-sky-600 text-white px-3 py-1 rounded text-sm">
-                    Edit
-                  </button>
-                </Link>
+                {loggedInUser && task.created_by === loggedInUser.id ? (
+                  <Link to={`/update-task/${task.id}`}>
+                    <button className="bg-sky-400 hover:bg-sky-600 text-white px-3 py-1 rounded text-sm">
+                      Edit
+                    </button>
+                  </Link>
+                ) : (
+                  //khi do nguoi khac tao ra
+                  <span className="text-gray-400 italic text-sm">Not allowed</span>
+                )}
               </td>
+
             </tr>
           ))}
+          {filteredTasks.length === 0 && (
+            <tr>
+              <td colSpan={9} className="py-4 text-center text-gray-500">
+                No tasks found.
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>

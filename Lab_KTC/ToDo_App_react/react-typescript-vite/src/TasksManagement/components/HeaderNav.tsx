@@ -1,6 +1,7 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import AuthContext from "../context";
+import { useAuthStore } from "../useAuthStore";
+// import AuthContext from "../context";
 
 const menuItems = [
   { label: "Our Tasks", path: "/tasks" },
@@ -9,13 +10,12 @@ const menuItems = [
 ];
 
 export const NavBar = () => {
-  const { user, setUser } = useContext(AuthContext);
+  // const { user, setUser } = useContext(AuthContext);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { loggedInUser, logOut } = useAuthStore((state) => state);
 
   const handleLogout = () => {
-    setUser(null);
-    localStorage.removeItem("access_token");
-    localStorage.removeItem("user");
+    logOut();
     window.location.href = "/login";
   };
 
@@ -33,25 +33,30 @@ export const NavBar = () => {
         </div>
 
         {/* Desktop Menu + Auth Buttons */}
-        <div className="hidden md:flex items-center space-x-2 ml-auto">
+        {loggedInUser && (
+        <ul className="hidden md:flex items-center space-x-2 ml-auto">
           {menuItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              className={({ isActive }) =>
-                `px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300
+            <li key={item.path}>
+              <NavLink
+                to={item.path}
+                className={({ isActive }) =>
+                  `px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300
                  ${
                    isActive
-                     ? "bg-white text-gray-900 shadow-md"
-                     : "hover:bg-white hover:text-gray-900 hover:shadow-sm"
+                     ? "bg-white text-amber-200 shadow-md"
+                     : "hover:bg-white hover:text-amber-200 hover:shadow"
                  }`
-              }
-            >
-              {item.label}
-            </NavLink>
+                }
+              >
+                {item.label}
+              </NavLink>
+            </li>
           ))}
-
-          {user ? (
+        </ul>
+        )}
+          
+          <div className="hidden md:block">
+          {loggedInUser ? (
             <button
               onClick={handleLogout}
               className="px-4 py-2 rounded-lg text-sm font-medium bg-sky-300 text-gray-900 shadow-md hover:shadow-sm hover:bg-sky-100"
@@ -68,10 +73,40 @@ export const NavBar = () => {
           )}
         </div>
 
+        
+
         {/* Hamburger Icon */}
         <div className="md:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? "✕" : "☰"}
+            {menuOpen ? (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
           </button>
         </div>
       </div>
@@ -79,35 +114,36 @@ export const NavBar = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="mt-4 md:hidden space-y-2">
-          {menuItems.map((item) => (
+          {loggedInUser &&
+            menuItems.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
               onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
-                `block w-full px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300
+                `block w-full px-4 py-2 rounded-full text-base font-medium transition-all duration-300
                  ${
                    isActive
-                     ? "bg-white text-gray-900 shadow-md"
-                     : "hover:bg-white hover:text-gray-900 hover:shadow-sm"
+                     ? "bg-white text-amber-200  shadow-md"
+                     : "hover:bg-white hover:text-amber-200  hover:shadow"
                  }`
               }
             >
               {item.label}
             </NavLink>
           ))}
-
-          {user ? (
+          
+          {loggedInUser ? (
             <button
               onClick={handleLogout}
-              className="w-full bg-sky-600 text-white px-4 py-2 rounded-xl font-semibold hover:bg-sky-800"
+              className="w-full bg-white text-amber-200  px-4 py-2 rounded-full font-semibold hover:bg-blue-100 transition"
             >
               Log Out
             </button>
           ) : (
             <button
               onClick={() => (window.location.href = "/login")}
-              className="w-full bg-sky-600 text-white px-4 py-2 rounded-xl font-semibold hover:bg-sky-800"
+              className="w-full bg-white text-text-amber-200  px-4 py-2 rounded-full font-semibold hover:bg-blue-100 transition"
             >
               Log In
             </button>

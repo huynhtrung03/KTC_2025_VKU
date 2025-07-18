@@ -1,9 +1,11 @@
 import { useForm, type SubmitHandler } from "react-hook-form";
-import AuthContext from "../context";
+// import AuthContext from "../context";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useContext } from "react";
-import { login } from "../services/taskService";
+import { useEffect } from "react";
+// import { login } from "../services/taskService";
+import { useNavigate } from "react-router";
+import { useAuthStore } from "../useAuthStore";
 
 const schema = yup.object({
   username: yup
@@ -22,7 +24,15 @@ interface IFormInput {
 }
 
 export const LogInPage = () => {
-  const { setUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { login, error, loggedInUser } = useAuthStore((state) => state);
+
+  useEffect(() => {
+    if (loggedInUser) {
+      navigate("/tasks");
+    }
+  }, [loggedInUser, navigate]);
+
   const {
     register,
     handleSubmit,
@@ -36,20 +46,11 @@ export const LogInPage = () => {
   });
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-    const rs = await login(data.username, data.password);
-    if (rs) {
-      const user = {
-        id: rs.loggedInUser.id,
-        email: rs.loggedInUser.email,
-        access_token: rs.access_token,
-      };
-      setUser(user);
-      localStorage.setItem("user", JSON.stringify(user));
-      localStorage.setItem("access_token", user.access_token);
-      window.location.href = "/tasks";
-    } else {
-      alert("Login failed. Please check your credentials.");
-    }
+    login({
+      username: data.username,
+      password: data.password,
+      navigate: navigate,
+    });
   };
 
   return (

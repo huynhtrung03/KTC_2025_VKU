@@ -37,12 +37,6 @@ export const authOptions: NextAuthOptions = {
         if (!credentials?.email || !credentials.password) {
           return null;
         }
-
-        // const payload = {
-        //   email: credentials.email,
-        //   password: credentials.password,
-        // };
-
         const res = await fetch('https://server.aptech.io/auth/login', {
           method: 'POST',
           body: JSON.stringify({
@@ -62,7 +56,6 @@ export const authOptions: NextAuthOptions = {
           throw new Error("UnAuthorized");
         }
         if (tokens) {
-          // Return user object with accessToken and refreshToken
           return {
             id: tokens.loggedInUser.id,
             name: tokens.loggedInUser.name,
@@ -72,8 +65,6 @@ export const authOptions: NextAuthOptions = {
             refreshToken: tokens.refresh_token,
           } as UserType;
         }
-
-        // Return null if user data could not be retrieved
         return null;
       },
     }),
@@ -81,7 +72,6 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     
     async jwt({ token, user} : { token: JWT; user: User }) {
-      //console.log('callbacks jwt', token, user);
       if (user) {
         return {
           ...token,
@@ -94,8 +84,6 @@ export const authOptions: NextAuthOptions = {
     },
 
     async session({ session, token }: { session: Session; token: JWT }) {
-      //console.log('callbacks session', token);
-      // Create a user object with token properties
       const userObject: UserType = {
         id: token.id as string,
         avatar: (token.avatar as string) ?? "",
@@ -105,7 +93,6 @@ export const authOptions: NextAuthOptions = {
         email: (token.email as string) ?? "",
       };
 
-      // Add the user object to the session
       session.user = userObject;
       return session;
     },
