@@ -153,52 +153,52 @@ export default function UserPage() {
       </div>
 
       {showPopup && selectedUser && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-          <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
-            <h3 className="text-2xl font-bold mb-6 text-center text-sky-700">
-              {removeMode ? `Xóa role khỏi ${selectedUser.fullName}` : `Thêm role cho ${selectedUser.fullName}`}
-            </h3>
-            <div className="mb-6 max-h-64 overflow-auto">
-              {userRoles.length > 0 ? (
-                userRoles.map((role: any) => (
-                  <label key={role.id} className="flex items-center mb-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      className="mr-3 w-5 h-5 text-sky-600 accent-sky-500"
-                      checked={checkedRoles.includes(role.id)}
-                      onChange={() => handleRoleCheck(role.id)}
-                    />
-                    <span className="text-gray-700 font-medium">{role.name}</span>
-                  </label>
-                ))
-              ) : (
-                <div className="text-gray-500 text-center">
-                  {removeMode ? "User chưa có role nào." : "User đã có tất cả các role."}
-                </div>
-              )}
-            </div>
-            <div className="flex justify-end gap-4">
-              <button
-                className="px-5 py-2 rounded-xl bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold"
-                onClick={() => {
-                  setShowPopup(false);
-                  setRemoveMode(false);
-                }}
-                disabled={loading}
-              >
-                Đóng
-              </button>
-              <button
-                className={`px-5 py-2 rounded-xl font-semibold text-white ${
-                  removeMode ? "bg-red-600 hover:bg-red-700" : "bg-sky-600 hover:bg-sky-700"
-                }`}
-                onClick={handleSubmitRoles}
-                disabled={loading || checkedRoles.length === 0}
-              >
-                {loading ? (removeMode ? "Đang xóa..." : "Đang thêm...") : removeMode ? "Xóa role" : "Thêm role"}
-              </button>
-            </div>
+        <div className="fixed inset-0 bg-black/20 flex items-center justify-center z-50 p-4">
+    <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-lg border border-sky-200 transition-all transform scale-100 animate-fade-in">
+      <h3 className="text-2xl font-bold mb-6 text-center text-sky-700">
+        {removeMode ? `Xóa role khỏi ${selectedUser.fullName}` : `Thêm role cho ${selectedUser.fullName}`}
+      </h3>
+      <div className="mb-6 max-h-64 overflow-auto space-y-4">
+        {userRoles.length > 0 ? (
+          userRoles.map((role: any) => (
+            <label key={role.id} className="flex items-center gap-3 cursor-pointer px-4 py-3 rounded-xl border hover:bg-sky-50">
+              <input
+                type="checkbox"
+                className="w-5 h-5 text-sky-600 accent-sky-500"
+                checked={checkedRoles.includes(role.id)}
+                onChange={() => handleRoleCheck(role.id)}
+              />
+              <span className="text-gray-700 font-medium">{role.name}</span>
+            </label>
+          ))
+        ) : (
+          <div className="text-gray-500 text-center">
+            {removeMode ? "User chưa có role nào." : "User đã có tất cả các role."}
           </div>
+        )}
+      </div>
+      <div className="flex justify-end gap-4">
+        <button
+          className="px-5 py-2 rounded-xl bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold"
+          onClick={() => {
+            setShowPopup(false);
+            setRemoveMode(false);
+          }}
+          disabled={loading}
+        >
+          Đóng
+        </button>
+        <button
+          className={`px-5 py-2 rounded-xl font-semibold text-white ${
+            removeMode ? "bg-red-600 hover:bg-red-700" : "bg-sky-600 hover:bg-sky-700"
+          }`}
+          onClick={handleSubmitRoles}
+          disabled={loading || checkedRoles.length === 0}
+        >
+          {loading ? (removeMode ? "Đang xóa..." : "Đang thêm...") : removeMode ? "Xóa role" : "Thêm role"}
+        </button>
+      </div>
+    </div>
         </div>
       )}
     </div>
