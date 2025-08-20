@@ -39,6 +39,10 @@ dependencies {
 	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.5'
 
 
+	//Caching - in memory cache buoi t3 12-8-2025
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+	//Redis - in memory cache buoi t3 12-8-2025
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
 
 	compileOnly 'org.projectlombok:lombok'

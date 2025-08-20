@@ -46,17 +46,20 @@ public class UserService {
     public UserResponseDto getUserByUsername(String username) {
         return userJpaRepository.findByUsername(username)
                 .map(this::convertDto)
-                .orElseThrow(() -> new RuntimeException("User not found with username: " + username));
+                .orElseThrow(() -> new RuntimeException("User not found with username: " +
+                        username));
     }
 
     public LoginResponseDto login(LoginRequestDto request) throws Exception {
         // Find the user by email (username)
         User user = this.userJpaRepository.findByUsername(request.getUsername())
-                .orElseThrow(() -> new HttpException("Invalid username or password", HttpStatus.UNAUTHORIZED));
+                .orElseThrow(() -> new HttpException("Invalid username or password",
+                        HttpStatus.UNAUTHORIZED));
 
         // Verify password
         if (!request.getPassword().equals(user.getPassword())) {
-            throw new HttpException("Invalid username or password", HttpStatus.UNAUTHORIZED);
+            throw new HttpException("Invalid username or password",
+                    HttpStatus.UNAUTHORIZED);
         }
 
         // Generate a new access token (with full data + roles)

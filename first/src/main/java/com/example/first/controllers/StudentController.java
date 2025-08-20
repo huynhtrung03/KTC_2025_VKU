@@ -70,9 +70,10 @@ public class StudentController {
         return studentService.getStudentByEmail(email);
     }
 
-    @GetMapping("/name/{name}")
-    public StudentResponseDto getStudentByName(@PathVariable("name") String name) {
-        return studentService.getStudentByName(name);
-    }
+    // @GetMapping("/name/{name}")
+    // public StudentResponseDto getStudentByName(@PathVariable("name") String name)
+    // {
+    // return studentService.getStudentByName(name);
+    // }
 
 }

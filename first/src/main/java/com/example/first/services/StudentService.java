@@ -2,6 +2,9 @@ package com.example.first.services;
 
 import java.util.List;
 
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -54,26 +57,71 @@ public class StudentService {
                 .build();
     }
 
+    // public List<StudentResponseDto> getAllStudents() {
+    // List<StudentResponseDto> students = studentJpaRepository.findAll().stream()
+    // .map(this::convertDto)
+    // .toList();
+
+    // return students;
+    // }
+
+    // public StudentResponseDto getStudentById(Long id) {
+    // return studentJpaRepository.findById(id)
+    // .map(this::convertDto)
+    // .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
+    // }
+
+    // // public Student getStudentById(Long id) {
+    // // return studentJpaRepository.findById(id).orElse(null);
+    // //
+    // }.name(student.getName()).email(student.getEmail()).address(student.getAddress()).build()).toList();
+
+    // // }
+
+    // public StudentResponseDto createStudent(CreateStudentRequestDto
+    // createStudentRequestDto) {
+    // Student student = new Student();
+    // student.setName(createStudentRequestDto.getName());
+    // student.setEmail(createStudentRequestDto.getEmail());
+    // student.setAddress(createStudentRequestDto.getAddress());
+    // student.setPassword(createStudentRequestDto.getPassword());
+
+    // Student savedStudent = studentJpaRepository.save(student);
+    // return convertDto(savedStudent);
+    // }
+
+    // public StudentResponseDto updateStudent(Long id, UpdateStudentRequestDto
+    // student) {
+    // Student existingStudent = studentJpaRepository.findById(id)
+    // .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
+    // existingStudent.setName(student.getName());
+    // existingStudent.setEmail(student.getEmail());
+    // existingStudent.setAddress(student.getAddress());
+    // existingStudent.setPassword(student.getPassword());
+    // return convertDto(studentJpaRepository.save(existingStudent));
+    // }
+
+    // public void deleteStudent(Long id) {
+    // studentJpaRepository.findById(id)
+    // .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
+    // studentJpaRepository.deleteById(id);
+    // }
+    @Cacheable(value = "students", key = "'all'")
     public List<StudentResponseDto> getAllStudents() {
         List<StudentResponseDto> students = studentJpaRepository.findAll().stream()
                 .map(this::convertDto)
                 .toList();
-
         return students;
     }
 
+    @Cacheable(value = "students", key = "#id")
     public StudentResponseDto getStudentById(Long id) {
         return studentJpaRepository.findById(id)
                 .map(this::convertDto)
                 .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
     }
 
-    // public Student getStudentById(Long id) {
-    // return studentJpaRepository.findById(id).orElse(null);
-    // }.name(student.getName()).email(student.getEmail()).address(student.getAddress()).build()).toList();
-
-    // }
-
+    @CacheEvict(value = "students", allEntries = true)
     public StudentResponseDto createStudent(CreateStudentRequestDto createStudentRequestDto) {
         Student student = new Student();
         student.setName(createStudentRequestDto.getName());
@@ -85,6 +133,8 @@ public class StudentService {
         return convertDto(savedStudent);
     }
 
+    @CachePut(value = "students", key = "#id")
+    @CacheEvict(value = "students", key = "'all'")
     public StudentResponseDto updateStudent(Long id, UpdateStudentRequestDto student) {
         Student existingStudent = studentJpaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
@@ -95,11 +145,13 @@ public class StudentService {
         return convertDto(studentJpaRepository.save(existingStudent));
     }
 
+    @CacheEvict(value = "students", allEntries = true)
     public void deleteStudent(Long id) {
         studentJpaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
         studentJpaRepository.deleteById(id);
     }
+    // -----------------cache// -----------------cache//
 
     public StudentProjection getStudentByEmail(String email) {
         StudentProjection student = studentJpaRepository.findByEmail(email);
