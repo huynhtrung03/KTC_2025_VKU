@@ -2,11 +2,28 @@
   "configurations": [
     {
       "type": "java",
+      "name": "EmployeeManagementApplication",
+      "request": "launch",
+      "mainClass": "com.example.employee_management.EmployeeManagementApplication",
+      "projectName": ""
+    },
+    {
+      "type": "java",
       "name": "Spring Boot-FirstApplication<first>",
       "request": "launch",
       "cwd": "${workspaceFolder}",
       "mainClass": "com.example.first.FirstApplication",
       "projectName": "first",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-EmployeeManagementApplication<employee-management>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.example.employee_management.EmployeeManagementApplication",
+      "projectName": "employee-management",
       "args": "",
       "envFile": "${workspaceFolder}/.env"
     }
