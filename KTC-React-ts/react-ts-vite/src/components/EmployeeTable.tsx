@@ -18,7 +18,6 @@ const EmployeeTable: React.FC = () => {
   const [form] = Form.useForm();
   const [editingEmployee, setEditingEmployee] = useState<Employee | null>(null);
 
-  // Sử dụng các hooks đã tạo
   const { data, isLoading } = useEmployeesQuery(page, size);
   const deleteMutation = useDeleteEmployeeMutation();
   const updateMutation = useUpdateEmployeeMutation();
@@ -52,7 +51,6 @@ const EmployeeTable: React.FC = () => {
   const handleFormSubmit = async (values: CreateEmployeeRequest | UpdateEmployeeRequest) => {
     try {
       if (editingEmployee) {
-        // Cập nhật
         await updateMutation.mutateAsync({
           id: editingEmployee.id,
           data: {
@@ -62,7 +60,6 @@ const EmployeeTable: React.FC = () => {
         });
         message.success('Cập nhật thành công!');
       } else {
-        // Tạo mới
         await createMutation.mutateAsync({
           ...values as CreateEmployeeRequest,
           dateOfBirth: dayjs(values.dateOfBirth).format('YYYY-MM-DD'),
@@ -90,6 +87,7 @@ const EmployeeTable: React.FC = () => {
     {
       title: 'Hành động',
       key: 'actions',
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       render: (_: any, record: Employee) => (
         <div className="flex gap-2">
           <Button icon={<EditOutlined />} onClick={() => handleEdit(record)}>
@@ -152,16 +150,16 @@ const EmployeeTable: React.FC = () => {
           layout="vertical"
           onFinish={handleFormSubmit}
         >
-          <Form.Item label="Họ và Tên" name="fullName" rules={[{ required: true, message: 'Vui lòng nhập họ và tên!' }]}>
+          <Form.Item label="Họ và Tên" name="fullName" rules={[{ required: true, message: 'Vui lòng nhập họ và tên!' }, { min: 4, max: 100, message: 'Tên phải từ 4-100 ký tự!' } ]}>
             <Input />
           </Form.Item>
           {/* Email chỉ được sửa khi tạo mới, không được sửa khi update */}
           {!editingEmployee && (
-             <Form.Item label="Email" name="email" rules={[{ required: true, message: 'Vui lòng nhập email!' }]}>
+             <Form.Item label="Email" name="email" rules={[{ required: true, message: 'Vui lòng nhập email!' }, { type: 'email', message: 'Email không hợp lệ!' } ]}>
                 <Input />
              </Form.Item>
           )}
-          <Form.Item label="Số điện thoại" name="phoneNumber" rules={[{ required: true, message: 'Vui lòng nhập số điện thoại!' }]}>
+          <Form.Item label="Số điện thoại" name="phoneNumber" rules={[{ required: true, message: 'Vui lòng nhập số điện thoại!' }, { len: 10, message: 'Số điện thoại phải có đúng 10 số!' }]}>
             <Input />
           </Form.Item>
           <Form.Item label="Ngày sinh" name="dateOfBirth" rules={[{ required: true, message: 'Vui lòng chọn ngày sinh!' }]}>
@@ -174,7 +172,7 @@ const EmployeeTable: React.FC = () => {
               <Option value="OTHER">Khác</Option>
             </Select>
           </Form.Item>
-          <Form.Item label="Mật khẩu" name="password" rules={[{ required: !editingEmployee, message: 'Vui lòng nhập mật khẩu!' }]}>
+          <Form.Item label="Mật khẩu" name="password" rules={[{ required: !editingEmployee, message: 'Vui lòng nhập mật khẩu!' }, { min: 6, message: 'Mật khẩu phải có ít nhất 6 ký tự!' }]}>
             <Input.Password placeholder={editingEmployee ? "Để trống nếu không đổi mật khẩu" : ""} />
           </Form.Item>
         </Form>

@@ -6,7 +6,9 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @ControllerAdvice
@@ -69,4 +71,53 @@ public class GlobalExceptionHandler {
             return statusCode;
         }
     }
+
+    // // IllegalArgumentException
+    // // 404 - Not Found, 409 - Conflict, 400 - Bad Request
+    // @ExceptionHandler(IllegalArgumentException.class)
+    // public ResponseEntity<Map<String, String>>
+    // handleNotFound(IllegalArgumentException e) {
+    // Map<String, String> error = new HashMap<>();
+    // error.put("error", e.getMessage());
+    // error.put("status", "404");
+
+    // if (e.getMessage().contains("not found")) {
+    // return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error); // 404
+    // }
+
+    // if (e.getMessage().contains("already exists")) {
+    // return ResponseEntity.status(HttpStatus.CONFLICT).body(error); // 409
+    // }
+
+    // return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error); // 400
+    // }
+
+    // // 400 - Validation Error
+    // @ExceptionHandler(MethodArgumentNotValidException.class)
+    // public ResponseEntity<Map<String, Object>>
+    // handleValidationError(MethodArgumentNotValidException e) {
+    // Map<String, Object> errors = new HashMap<>();
+    // errors.put("error", "Validation Failed");
+    // errors.put("status", "400");
+
+    // Map<String, String> fieldErrors = new HashMap<>();
+    // e.getBindingResult().getFieldErrors().forEach(error -> {
+    // fieldErrors.put(error.getField(), error.getDefaultMessage());
+    // });
+    // errors.put("details", fieldErrors);
+
+    // return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors); // 400
+    // }
+
+    // // 500 - Internal Server Error
+    // @ExceptionHandler(Exception.class)
+    // public ResponseEntity<Map<String, String>> handleGeneralError(Exception e) {
+    // Map<String, String> error = new HashMap<>();
+    // error.put("error", "Internal Server Error");
+    // error.put("message", e.getMessage());
+    // error.put("status", "500");
+
+    // return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
+    // // 500
+    // }
 }

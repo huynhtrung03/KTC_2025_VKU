@@ -24,5 +24,4 @@ public class EmployeeResponseDto {
     private Boolean active;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-
 }
