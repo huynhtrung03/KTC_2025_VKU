@@ -153,7 +153,6 @@ const EmployeeTable: React.FC = () => {
           <Form.Item label="Họ và Tên" name="fullName" rules={[{ required: true, message: 'Vui lòng nhập họ và tên!' }, { min: 4, max: 100, message: 'Tên phải từ 4-100 ký tự!' } ]}>
             <Input />
           </Form.Item>
-          {/* Email chỉ được sửa khi tạo mới, không được sửa khi update */}
           {!editingEmployee && (
              <Form.Item label="Email" name="email" rules={[{ required: true, message: 'Vui lòng nhập email!' }, { type: 'email', message: 'Email không hợp lệ!' } ]}>
                 <Input />
@@ -167,9 +166,9 @@ const EmployeeTable: React.FC = () => {
           </Form.Item>
           <Form.Item label="Giới tính" name="gender" rules={[{ required: true, message: 'Vui lòng chọn giới tính!' }]}>
             <Select>
-              <Option value="MALE">Nam</Option>
-              <Option value="FEMALE">Nữ</Option>
-              <Option value="OTHER">Khác</Option>
+              <Option value="MALE">MALE</Option>
+              <Option value="FEMALE">FEMALE</Option>
+              <Option value="OTHER">OTHER</Option>
             </Select>
           </Form.Item>
           <Form.Item label="Mật khẩu" name="password" rules={[{ required: !editingEmployee, message: 'Vui lòng nhập mật khẩu!' }, { min: 6, message: 'Mật khẩu phải có ít nhất 6 ký tự!' }]}>
