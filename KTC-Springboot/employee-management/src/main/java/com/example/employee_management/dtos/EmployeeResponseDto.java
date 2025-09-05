@@ -22,6 +22,6 @@ public class EmployeeResponseDto {
     private Gender gender;
     private String phoneNumber;
     private Boolean active;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    // private LocalDateTime createdAt;
+    // private LocalDateTime updatedAt;
 }

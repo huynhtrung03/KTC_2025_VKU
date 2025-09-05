@@ -85,13 +85,14 @@ const EmployeeTable: React.FC = () => {
     },
     { title: 'Giới tính', dataIndex: 'gender', key: 'gender' },
     {
-      title: 'Hành động',
+      title: '',
       key: 'actions',
+      width: '1%',
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       render: (_: any, record: Employee) => (
         <div className="flex gap-2">
           <Button icon={<EditOutlined />} onClick={() => handleEdit(record)}>
-            Sửa
+            
           </Button>
           <Popconfirm
             title="Bạn có chắc chắn muốn xóa?"
@@ -101,7 +102,7 @@ const EmployeeTable: React.FC = () => {
             icon={<ExclamationCircleOutlined style={{ color: 'red' }} />}
           >
             <Button icon={<DeleteOutlined />} danger>
-              Xóa
+              
             </Button>
           </Popconfirm>
         </div>

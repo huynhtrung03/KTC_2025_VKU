@@ -38,12 +38,13 @@ export const useEmployeesQuery = (page: number, size: number) => {
     });
 };
 
+//hook
 export const useCreateEmployeeMutation = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: employeeApi.createEmployee,
         onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ['employees'] });
+            queryClient.invalidateQueries({ queryKey: ['employees'] }); //tự động invalidate  và refetch
         }
     });
 };

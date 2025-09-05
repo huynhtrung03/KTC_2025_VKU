@@ -35,8 +35,8 @@ public class EmployeeService {
                 .gender(employee.getGender())
                 .phoneNumber(employee.getPhoneNumber())
                 .active(employee.getActive())
-                .createdAt(employee.getCreatedAt())
-                .updatedAt(employee.getUpdatedAt())
+                // .createdAt(employee.getCreatedAt())
+                // .updatedAt(employee.getUpdatedAt())
                 .build();
     }
 
