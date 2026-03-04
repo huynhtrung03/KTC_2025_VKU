@@ -395,7 +395,7 @@ export default function LoveGiftBox() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="relative z-10">Đóng lại</span>
+                <span className="relative z-10">Đóng</span>
                 <motion.div
                   className="absolute inset-0 bg-pink-100 rounded-full"
                   initial={{ scale: 0 }}
