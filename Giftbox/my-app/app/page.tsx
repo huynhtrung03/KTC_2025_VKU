@@ -322,30 +322,30 @@ export default function LoveGiftBox() {
 
               {/* Lời chúc với hiệu ứng typewriter */}
               <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5 }}
-                className="bg-gradient-to-r from-pink-50 to-purple-50 p-5 rounded-2xl text-pink-700 text-base leading-relaxed shadow-inner mb-6 text-left border-l-4 border-pink-400 relative"
-                style={{ fontFamily: "'Dancing Script', cursive" }}
-              >
-                <div className="whitespace-pre-line">
-                  {displayText}
-                  <motion.span
-                    animate={{ opacity: [1, 0] }}
-                    transition={{ duration: 0.8, repeat: Infinity }}
-                    className="text-pink-500"
-                  >
-                    |
-                  </motion.span>
-                </div>
-                
-                {/* Hiệu ứng shimmer */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                  animate={{ x: [-100, 400] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                />
-              </motion.div>
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ delay: 0.5 }}
+  className="bg-gradient-to-r from-pink-50 to-purple-50 p-5 rounded-2xl text-pink-700 text-base leading-relaxed shadow-inner mb-6 text-left border-l-4 border-pink-400 relative"
+  style={{ fontFamily: "'Pacifico', cursive" }} // Thay đổi font ở đây
+>
+  <div className="whitespace-pre-line">
+    {displayText}
+    <motion.span
+      animate={{ opacity: [1, 0] }}
+      transition={{ duration: 0.8, repeat: Infinity }}
+      className="text-pink-500"
+    >
+      |
+    </motion.span>
+  </div>
+  
+  {/* Hiệu ứng shimmer */}
+  <motion.div
+    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+    animate={{ x: [-100, 400] }}
+    transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+  />
+</motion.div>
 
               {/* Videos với hiệu ứng hover */}
               <div className="grid grid-cols-2 gap-3 h-40">
